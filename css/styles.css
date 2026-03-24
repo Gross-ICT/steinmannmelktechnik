@@ -56,34 +56,46 @@ ul { list-style: none; }
   background: transparent; transition: var(--transition); padding: 20px 0;
 }
 
-.navbar.scrolled, .navbar-inner {
+.navbar.scrolled {
   background: rgba(254, 252, 248, 0.95);
   backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
   box-shadow: var(--shadow-sm); padding: 12px 0;
 }
 
+.navbar-inner {
+  background: transparent; padding: 12px 0;
+}
+
+.navbar-inner.scrolled {
+  background: rgba(254, 252, 248, 0.95);
+  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+  box-shadow: var(--shadow-sm);
+}
+
 .navbar.scrolled .nav-logo .logo-name,
 .navbar.scrolled .nav-logo .logo-sub,
 .navbar.scrolled .nav-link,
-.navbar-inner .nav-logo .logo-name,
-.navbar-inner .nav-logo .logo-sub,
-.navbar-inner .nav-link {
+.navbar-inner.scrolled .nav-logo .logo-name,
+.navbar-inner.scrolled .nav-logo .logo-sub,
+.navbar-inner.scrolled .nav-link {
   color: var(--clr-text);
 }
 
 .navbar.scrolled .nav-link:hover, .navbar.scrolled .nav-link.active,
-.navbar-inner .nav-link:hover, .navbar-inner .nav-link.active {
+.navbar-inner.scrolled .nav-link:hover, .navbar-inner.scrolled .nav-link.active {
   color: var(--clr-primary);
   background: rgba(45, 106, 79, 0.1);
 }
 
-.navbar.scrolled .logo-icon, .navbar-inner .logo-icon {
+.navbar.scrolled .logo-icon, .navbar-inner.scrolled .logo-icon {
   background: var(--clr-primary); color: white;
 }
 
-.navbar.scrolled .nav-toggle span, .navbar-inner .nav-toggle span {
+.navbar.scrolled .nav-toggle span, .navbar-inner.scrolled .nav-toggle span {
   background: var(--clr-text);
 }
+
+.navbar-inner .logo-sub { color: rgba(255,255,255,0.8); }
 
 .nav-container { display: flex; align-items: center; justify-content: space-between; }
 
@@ -181,9 +193,11 @@ ul { list-style: none; }
    ============================================ */
 
 .page-header {
-  padding: 140px 0 60px;
+  padding: 160px 0 72px;
   background: linear-gradient(135deg, var(--clr-primary-dark) 0%, var(--clr-primary) 100%);
   text-align: center;
+  position: relative;
+  z-index: 1;
 }
 
 .page-header .section-tag {
@@ -581,7 +595,7 @@ ul { list-style: none; }
   .contact-map { height: 300px; }
   .footer-grid { grid-template-columns: 1fr; gap: 28px; }
   .section { padding: 72px 0; }
-  .page-header { padding: 120px 0 48px; }
+  .page-header { padding: 140px 0 48px; }
   .owner-card { position: static; }
 }
 

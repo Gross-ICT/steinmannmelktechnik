@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- Navbar scroll effect ---
   const navbar = document.getElementById('navbar');
-  if (navbar && !navbar.classList.contains('navbar-inner')) {
+  if (navbar) {
     function handleScroll() {
       navbar.classList.toggle('scrolled', window.scrollY > 60);
     }
