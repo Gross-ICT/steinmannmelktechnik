@@ -140,11 +140,11 @@ ul { list-style: none; }
 }
 
 .hero-video-wrapper { position: absolute; inset: 0; z-index: 0; }
-.hero-video { width: 100%; height: 100%; object-fit: cover; }
+.hero-canvas { width: 100%; height: 100%; display: block; }
 
 .hero-overlay {
   position: absolute; inset: 0;
-  background: linear-gradient(135deg, rgba(27,67,50,0.85) 0%, rgba(45,106,79,0.7) 40%, rgba(27,67,50,0.8) 100%);
+  background: linear-gradient(135deg, rgba(27,67,50,0.45) 0%, rgba(45,106,79,0.3) 40%, rgba(27,67,50,0.5) 100%);
 }
 
 .hero-content {
@@ -551,8 +551,80 @@ ul { list-style: none; }
   60% { transform: translateX(-50%) translateY(-5px); }
 }
 
-.fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+.fade-in {
+  opacity: 0; transform: translateY(32px);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
 .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+/* Navbar hide/show on scroll */
+.navbar { transition: var(--transition), transform 0.35s ease; }
+.nav-hidden { transform: translateY(-100%); }
+
+/* Dynamic hover effects */
+.teaser-card, .service-card, .partner-detail-card, .about-card, .direction-card, .process-step {
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease, border-color 0.3s ease;
+}
+
+.teaser-card:hover .teaser-icon,
+.service-card:hover .service-icon {
+  transform: scale(1.1) rotate(-3deg);
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.teaser-icon, .service-icon, .about-icon, .highlight-icon, .contact-icon, .partner-logo-area {
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), background 0.3s ease, color 0.3s ease;
+}
+
+.about-card:hover .about-icon,
+.direction-card:hover .about-icon,
+.highlight:hover .highlight-icon {
+  transform: scale(1.1);
+  background: var(--clr-primary);
+  color: white;
+}
+
+.contact-card:hover .contact-icon {
+  background: var(--clr-primary);
+  color: white;
+  transform: scale(1.05);
+}
+
+/* CTA banner animation */
+.cta-banner {
+  background-size: 200% 200%;
+  animation: gradientShift 8s ease infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Button pulse on CTA */
+.cta-actions .btn-primary {
+  animation: subtlePulse 3s ease-in-out infinite;
+}
+
+@keyframes subtlePulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(212,163,115,0.4); }
+  50% { box-shadow: 0 0 0 8px rgba(212,163,115,0); }
+}
+
+/* Process number hover */
+.process-step:hover .process-number {
+  opacity: 0.8;
+  color: var(--clr-primary);
+  transition: all 0.4s ease;
+}
+
+/* Link arrow animation */
+.teaser-link i { transition: transform 0.3s ease; }
+.teaser-link:hover i { transform: translateX(4px); }
+
+/* Button icon animations */
+.btn i { transition: transform 0.3s ease; }
+.btn:hover i { transform: translateX(3px); }
 
 /* ============================================
    Responsive

@@ -41,9 +41,7 @@
   <!-- Hero Section with Video (plays once, max 5s) -->
   <section class="hero" id="home">
     <div class="hero-video-wrapper">
-      <video class="hero-video" id="heroVideo" autoplay muted playsinline poster="img/hero-fallback.jpg">
-        <source src="https://videos.pexels.com/video-files/5930408/5930408-uhd_2732_1440_25fps.mp4" type="video/mp4">
-      </video>
+      <canvas id="heroCanvas" class="hero-canvas"></canvas>
       <div class="hero-overlay"></div>
     </div>
     <div class="container hero-content">
@@ -211,6 +209,7 @@
     </div>
   </footer>
 
+  <script src="js/hero-animation.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
