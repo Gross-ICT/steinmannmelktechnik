@@ -4,18 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Steinmann Melktechnik GmbH – Ihr Partner für Melkanlagen, Stalleinrichtungen und Hoftechnik in Hüswil, Luzern. Verkauf, Montage, Service und Reparatur.">
-  <meta name="keywords" content="Melktechnik, Stalltechnik, Hoftechnik, Melkanlagen, Stalleinrichtungen, Hüswil, Luzern, Schweiz, GEA, Montage, Service">
   <title>Steinmann Melktechnik GmbH – Hof- und Stalltechnik aus Hüswil</title>
-
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-
-  <!-- Phosphor Icons -->
   <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.0.3/src/regular/style.css">
-  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.0.3/src/bold/style.css">
-
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -23,7 +16,7 @@
   <!-- Navigation -->
   <nav class="navbar" id="navbar">
     <div class="container nav-container">
-      <a href="#home" class="nav-logo">
+      <a href="index.html" class="nav-logo">
         <span class="logo-icon"><i class="ph ph-barn"></i></span>
         <div class="logo-text">
           <span class="logo-name">Steinmann</span>
@@ -36,19 +29,19 @@
         <span></span>
       </button>
       <ul class="nav-menu" id="navMenu">
-        <li><a href="#home" class="nav-link active">Home</a></li>
-        <li><a href="#about" class="nav-link">Über uns</a></li>
-        <li><a href="#services" class="nav-link">Dienstleistungen</a></li>
-        <li><a href="#partners" class="nav-link">Partner</a></li>
-        <li><a href="#contact" class="nav-link nav-cta">Kontakt</a></li>
+        <li><a href="index.html" class="nav-link active">Home</a></li>
+        <li><a href="ueber-uns.html" class="nav-link">Über uns</a></li>
+        <li><a href="dienstleistungen.html" class="nav-link">Dienstleistungen</a></li>
+        <li><a href="partner.html" class="nav-link">Partner</a></li>
+        <li><a href="kontakt.html" class="nav-link nav-cta">Kontakt</a></li>
       </ul>
     </div>
   </nav>
 
-  <!-- Hero Section -->
+  <!-- Hero Section with Video (plays once, max 5s) -->
   <section class="hero" id="home">
     <div class="hero-video-wrapper">
-      <video class="hero-video" autoplay muted loop playsinline poster="img/hero-fallback.jpg">
+      <video class="hero-video" id="heroVideo" autoplay muted playsinline poster="img/hero-fallback.jpg">
         <source src="https://videos.pexels.com/video-files/5930408/5930408-uhd_2732_1440_25fps.mp4" type="video/mp4">
       </video>
       <div class="hero-overlay"></div>
@@ -58,11 +51,11 @@
       <h1>Ihr Fachpartner für <span class="text-accent">Melktechnik</span> & Stalleinrichtungen</h1>
       <p class="hero-desc">Verkauf, Montage, Service und Reparatur von Melkanlagen und Hofzubehör – kompetent, zuverlässig und persönlich.</p>
       <div class="hero-actions">
-        <a href="#contact" class="btn btn-primary">
+        <a href="kontakt.html" class="btn btn-primary">
           <i class="ph ph-phone"></i> Kontakt aufnehmen
         </a>
-        <a href="#services" class="btn btn-outline">
-          <i class="ph ph-arrow-down"></i> Unsere Leistungen
+        <a href="dienstleistungen.html" class="btn btn-outline">
+          Unsere Leistungen <i class="ph ph-arrow-right"></i>
         </a>
       </div>
       <div class="hero-stats">
@@ -82,250 +75,90 @@
         </div>
       </div>
     </div>
-    <div class="hero-scroll">
-      <a href="#about" aria-label="Nach unten scrollen">
-        <i class="ph ph-caret-double-down"></i>
-      </a>
-    </div>
   </section>
 
-  <!-- About Section -->
-  <section class="section about" id="about">
+  <!-- Intro Teaser Section -->
+  <section class="section intro-teaser">
     <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Über uns</span>
-        <h2>Kompetenz trifft <span class="text-accent">Leidenschaft</span></h2>
-        <p class="section-subtitle">Seit 2015 sind wir Ihr verlässlicher Partner für Hof- und Stalltechnik in der Region Luzern und darüber hinaus.</p>
-      </div>
-      <div class="about-grid">
-        <div class="about-card">
-          <div class="about-icon"><i class="ph ph-user-circle"></i></div>
-          <h3>Persönlicher Service</h3>
-          <p>Als inhabergeführtes Unternehmen von Urs Steinmann stehen wir für persönliche Beratung und individuelle Lösungen. Jeder Hof ist einzigartig – und genau so betreuen wir ihn.</p>
+      <div class="teaser-grid">
+        <div class="teaser-card">
+          <div class="teaser-icon"><i class="ph ph-wrench"></i></div>
+          <h3>Montage & Installation</h3>
+          <p>Professionelle Montage von Melkanlagen, Stalleinrichtungen und Kühltechnik – alles aus einer Hand.</p>
+          <a href="dienstleistungen.html" class="teaser-link">Mehr erfahren <i class="ph ph-arrow-right"></i></a>
         </div>
-        <div class="about-card">
-          <div class="about-icon"><i class="ph ph-wrench"></i></div>
-          <h3>Fachgerechte Montage</h3>
-          <p>Von der Planung bis zur Inbetriebnahme begleiten wir Sie durch den gesamten Prozess. Unsere Montagen sind sauber, termingerecht und auf Langlebigkeit ausgelegt.</p>
-        </div>
-        <div class="about-card">
-          <div class="about-icon"><i class="ph ph-clock-clockwise"></i></div>
-          <h3>Schneller Service</h3>
-          <p>Wenn die Technik stillsteht, muss es schnell gehen. Wir bieten zuverlässigen Reparatur- und Wartungsservice, damit Ihr Betrieb reibungslos läuft.</p>
-        </div>
-        <div class="about-card">
-          <div class="about-icon"><i class="ph ph-handshake"></i></div>
-          <h3>Starke Partnerschaften</h3>
-          <p>Durch unsere Zusammenarbeit mit führenden Herstellern wie GEA, Buri AG und weiteren bieten wir Ihnen Produkte höchster Qualität und neuester Technologie.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Services Section -->
-  <section class="section services" id="services">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Dienstleistungen</span>
-        <h2>Was wir für <span class="text-accent">Sie tun</span></h2>
-        <p class="section-subtitle">Von der Melkanlage bis zur kompletten Stalleinrichtung – wir decken alle Bereiche der modernen Hoftechnik ab.</p>
-      </div>
-      <div class="services-grid">
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="ph ph-drop"></i>
-          </div>
-          <h3>Melktechnik</h3>
-          <p>Verkauf, Installation und Wartung moderner Melkanlagen. Von konventionellen Systemen bis hin zu automatisierten Lösungen – wir finden die passende Technik für Ihren Betrieb.</p>
-          <ul class="service-features">
-            <li><i class="ph ph-check-circle"></i> Melkanlagen & Melkstände</li>
-            <li><i class="ph ph-check-circle"></i> Milchmengenmessung</li>
-            <li><i class="ph ph-check-circle"></i> Vakuumpumpen & Leitungen</li>
-          </ul>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="ph ph-thermometer-cold"></i>
-          </div>
-          <h3>Kühltechnik</h3>
-          <p>Professionelle Milchkühlanlagen für optimale Milchqualität. Wir planen und installieren Kühlsysteme, die Ihren Anforderungen entsprechen.</p>
-          <ul class="service-features">
-            <li><i class="ph ph-check-circle"></i> Milchkühltanks</li>
-            <li><i class="ph ph-check-circle"></i> Kühlaggregate</li>
-            <li><i class="ph ph-check-circle"></i> Wärmerückgewinnung</li>
-          </ul>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="ph ph-barn"></i>
-          </div>
-          <h3>Stalleinrichtungen</h3>
-          <p>Komplette Stalleinrichtungen für Rinder und weitere Nutztiere. Vom Liegeboxenbügel bis zur Stallplanung – alles aus einer Hand.</p>
-          <ul class="service-features">
-            <li><i class="ph ph-check-circle"></i> Liegeboxen & Fressgitter</li>
-            <li><i class="ph ph-check-circle"></i> Entmistungsanlagen</li>
-            <li><i class="ph ph-check-circle"></i> Stallplanung</li>
-          </ul>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="ph ph-bowl-food"></i>
-          </div>
-          <h3>Fütterungstechnik</h3>
-          <p>Automatisierte und manuelle Fütterungslösungen für eine effiziente und tiergerechte Fütterung Ihrer Tiere.</p>
-          <ul class="service-features">
-            <li><i class="ph ph-check-circle"></i> Fütterungsautomaten</li>
-            <li><i class="ph ph-check-circle"></i> Futtermischwagen</li>
-            <li><i class="ph ph-check-circle"></i> Kraftfutterstationen</li>
-          </ul>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="ph ph-droplet"></i>
-          </div>
-          <h3>Güllenmanagement</h3>
-          <p>Effiziente Lösungen für das Güllenmanagement – von der Lagerung bis zur Ausbringung. Umweltgerecht und wirtschaftlich.</p>
-          <ul class="service-features">
-            <li><i class="ph ph-check-circle"></i> Güllepumpen</li>
-            <li><i class="ph ph-check-circle"></i> Rührwerke & Mischer</li>
-            <li><i class="ph ph-check-circle"></i> Separationstechnik</li>
-          </ul>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="ph ph-gear"></i>
-          </div>
+        <div class="teaser-card">
+          <div class="teaser-icon"><i class="ph ph-gear"></i></div>
           <h3>Service & Reparatur</h3>
-          <p>Schnelle Hilfe bei Störungen, regelmässige Wartung und zuverlässiger Ersatzteilservice. Wir halten Ihre Technik am Laufen.</p>
-          <ul class="service-features">
-            <li><i class="ph ph-check-circle"></i> Notfall-Reparaturen</li>
-            <li><i class="ph ph-check-circle"></i> Wartungsverträge</li>
-            <li><i class="ph ph-check-circle"></i> Ersatzteile</li>
-          </ul>
+          <p>Schnelle Hilfe bei Störungen und regelmässige Wartung. Wir halten Ihre Technik zuverlässig am Laufen.</p>
+          <a href="dienstleistungen.html" class="teaser-link">Mehr erfahren <i class="ph ph-arrow-right"></i></a>
+        </div>
+        <div class="teaser-card">
+          <div class="teaser-icon"><i class="ph ph-handshake"></i></div>
+          <h3>Starke Partner</h3>
+          <p>Zusammenarbeit mit führenden Herstellern wie GEA, Buri AG, ITIN & HOCH und weiteren Marken.</p>
+          <a href="partner.html" class="teaser-link">Unsere Partner <i class="ph ph-arrow-right"></i></a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Partners Section -->
-  <section class="section partners" id="partners">
+  <!-- About Teaser -->
+  <section class="section about-teaser">
     <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Unsere Partner</span>
-        <h2>Zusammen <span class="text-accent">stark</span></h2>
-        <p class="section-subtitle">Wir arbeiten mit führenden Herstellern zusammen, um Ihnen die beste Technik und Qualität zu bieten.</p>
-      </div>
-      <div class="partners-grid">
-        <div class="partner-card">
-          <div class="partner-logo-area">
-            <i class="ph ph-factory"></i>
-          </div>
-          <h3>GEA Farm Technologies</h3>
-          <p>Weltweit führend in der Melk- und Kühltechnik. Innovative Lösungen für automatisches und konventionelles Melken.</p>
-          <span class="partner-tag">Melktechnik</span>
+      <div class="about-teaser-grid">
+        <div class="about-teaser-content">
+          <span class="section-tag">Über uns</span>
+          <h2>Kompetenz trifft <span class="text-accent">Leidenschaft</span></h2>
+          <p>Steinmann Melktechnik GmbH ist Ihr inhabergeführter Fachbetrieb für Hof- und Stalltechnik in Hüswil, Kanton Luzern. Seit 2015 betreut Urs Steinmann Landwirtschaftsbetriebe in der ganzen Region – persönlich, kompetent und zuverlässig.</p>
+          <p>Ob Neuinstallation, Umbau oder Reparatur – wir begleiten Sie von der Beratung bis zur Inbetriebnahme und darüber hinaus.</p>
+          <a href="ueber-uns.html" class="btn btn-primary-dark">
+            Mehr über uns <i class="ph ph-arrow-right"></i>
+          </a>
         </div>
-        <div class="partner-card">
-          <div class="partner-logo-area">
-            <i class="ph ph-barn"></i>
+        <div class="about-teaser-highlights">
+          <div class="highlight">
+            <div class="highlight-icon"><i class="ph ph-user-circle"></i></div>
+            <div>
+              <h4>Persönliche Beratung</h4>
+              <p>Individuelle Lösungen für jeden Hof</p>
+            </div>
           </div>
-          <h3>ITIN & HOCH GmbH</h3>
-          <p>Spezialist für Fütterungstechnik und Stalleinrichtungen. Schweizer Qualität für Ihren Stall.</p>
-          <span class="partner-tag">Fütterungstechnik</span>
-        </div>
-        <div class="partner-card">
-          <div class="partner-logo-area">
-            <i class="ph ph-snowflake"></i>
+          <div class="highlight">
+            <div class="highlight-icon"><i class="ph ph-clock-clockwise"></i></div>
+            <div>
+              <h4>Schnelle Reaktion</h4>
+              <p>Zuverlässiger Notfall-Service</p>
+            </div>
           </div>
-          <h3>Buri AG</h3>
-          <p>Ihr Experte für professionelle Milchkühlanlagen. Zuverlässige Kühlung für beste Milchqualität.</p>
-          <span class="partner-tag">Milchkühlanlagen</span>
-        </div>
-        <div class="partner-card">
-          <div class="partner-logo-area">
-            <i class="ph ph-cow"></i>
+          <div class="highlight">
+            <div class="highlight-icon"><i class="ph ph-certificate"></i></div>
+            <div>
+              <h4>Qualitätsprodukte</h4>
+              <p>Nur bewährte Marken und Technik</p>
+            </div>
           </div>
-          <h3>Hanskamp</h3>
-          <p>Innovative Lösungen für Tierpflege und Stallhygiene. Für das Wohlbefinden Ihrer Tiere.</p>
-          <span class="partner-tag">Tierpflege</span>
-        </div>
-        <div class="partner-card">
-          <div class="partner-logo-area">
-            <i class="ph ph-bowl-food"></i>
+          <div class="highlight">
+            <div class="highlight-icon"><i class="ph ph-map-pin"></i></div>
+            <div>
+              <h4>Regional verwurzelt</h4>
+              <p>Aus Hüswil für die Region Luzern</p>
+            </div>
           </div>
-          <h3>Wirth Fütterungstechnik AG</h3>
-          <p>Moderne Fütterungssysteme für eine effiziente und tiergerechte Fütterung.</p>
-          <span class="partner-tag">Fütterungstechnik</span>
-        </div>
-        <div class="partner-card">
-          <div class="partner-logo-area">
-            <i class="ph ph-warehouse"></i>
-          </div>
-          <h3>Hallenplan GmbH</h3>
-          <p>Planung und Bau von landwirtschaftlichen Hallen und Gebäuden.</p>
-          <span class="partner-tag">Hallenbau</span>
-        </div>
-        <div class="partner-card">
-          <div class="partner-logo-area">
-            <i class="ph ph-buildings"></i>
-          </div>
-          <h3>Huswiss GmbH</h3>
-          <p>Schweizer Qualitätsprodukte für die Landwirtschaft und Hofzubehör.</p>
-          <span class="partner-tag">Hofzubehör</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <section class="section contact" id="contact">
+  <!-- CTA Banner -->
+  <section class="cta-banner">
     <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Kontakt</span>
-        <h2>Wir sind <span class="text-accent">für Sie da</span></h2>
-        <p class="section-subtitle">Haben Sie Fragen oder möchten Sie ein unverbindliches Angebot? Kontaktieren Sie uns – wir beraten Sie gerne.</p>
-      </div>
-      <div class="contact-grid">
-        <div class="contact-info">
-          <div class="contact-card">
-            <div class="contact-icon"><i class="ph ph-map-pin"></i></div>
-            <div>
-              <h3>Adresse</h3>
-              <p>Steinmann Melktechnik GmbH<br>Bernstrasse 7a<br>6152 Hüswil LU</p>
-            </div>
-          </div>
-          <div class="contact-card">
-            <div class="contact-icon"><i class="ph ph-phone"></i></div>
-            <div>
-              <h3>Telefon</h3>
-              <p><a href="tel:+41796412453">079 641 24 53</a></p>
-            </div>
-          </div>
-          <div class="contact-card">
-            <div class="contact-icon"><i class="ph ph-envelope"></i></div>
-            <div>
-              <h3>E-Mail</h3>
-              <p><a href="mailto:steinmann.urs@bluewin.ch">steinmann.urs@bluewin.ch</a></p>
-            </div>
-          </div>
-          <div class="contact-card">
-            <div class="contact-icon"><i class="ph ph-user"></i></div>
-            <div>
-              <h3>Inhaber</h3>
-              <p>Urs Steinmann<br>Geschäftsführer</p>
-            </div>
-          </div>
-        </div>
-        <div class="contact-map">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2710.5!2d7.8844!3d47.1167!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478ffca8a8a8a8a9%3A0x0!2sBernstrasse%207a%2C%206152%20H%C3%BCswil!5e0!3m2!1sde!2sch!4v1"
-            width="100%"
-            height="100%"
-            style="border:0; border-radius: 16px;"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            title="Standort Steinmann Melktechnik GmbH">
-          </iframe>
+      <div class="cta-content">
+        <h2>Projekt geplant? Wir beraten Sie gerne.</h2>
+        <p>Ob Neuanlage, Umbau oder Reparatur – rufen Sie uns an oder schreiben Sie uns.</p>
+        <div class="cta-actions">
+          <a href="tel:+41796412453" class="btn btn-primary"><i class="ph ph-phone"></i> 079 641 24 53</a>
+          <a href="kontakt.html" class="btn btn-outline-dark">Zum Kontaktformular <i class="ph ph-arrow-right"></i></a>
         </div>
       </div>
     </div>
@@ -336,7 +169,7 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="#home" class="nav-logo footer-logo">
+          <a href="index.html" class="nav-logo footer-logo">
             <span class="logo-icon"><i class="ph ph-barn"></i></span>
             <div class="logo-text">
               <span class="logo-name">Steinmann</span>
@@ -348,21 +181,21 @@
         <div class="footer-links">
           <h4>Navigation</h4>
           <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">Über uns</a></li>
-            <li><a href="#services">Dienstleistungen</a></li>
-            <li><a href="#partners">Partner</a></li>
-            <li><a href="#contact">Kontakt</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="ueber-uns.html">Über uns</a></li>
+            <li><a href="dienstleistungen.html">Dienstleistungen</a></li>
+            <li><a href="partner.html">Partner</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
           </ul>
         </div>
         <div class="footer-links">
           <h4>Leistungen</h4>
           <ul>
-            <li><a href="#services">Melktechnik</a></li>
-            <li><a href="#services">Kühltechnik</a></li>
-            <li><a href="#services">Stalleinrichtungen</a></li>
-            <li><a href="#services">Fütterungstechnik</a></li>
-            <li><a href="#services">Service & Reparatur</a></li>
+            <li><a href="dienstleistungen.html">Melktechnik</a></li>
+            <li><a href="dienstleistungen.html">Kühltechnik</a></li>
+            <li><a href="dienstleistungen.html">Stalleinrichtungen</a></li>
+            <li><a href="dienstleistungen.html">Fütterungstechnik</a></li>
+            <li><a href="dienstleistungen.html">Service & Reparatur</a></li>
           </ul>
         </div>
         <div class="footer-contact">
