@@ -9,19 +9,15 @@
 
   // If video loads successfully, hide canvas and skip animation
   if (video) {
-    // Wait until fully buffered, then start playback
+    // Wait until fully buffered, then start playback at normal speed
     function tryPlay() {
-      video.defaultPlaybackRate = 0.75;
-      video.playbackRate = 0.75;
       canvas.style.display = 'none';
       video.play().catch(function () {
-        // Autoplay blocked – show canvas fallback
         video.style.display = 'none';
         canvas.style.display = 'block';
       });
     }
 
-    // Only start once the browser has enough data buffered
     if (video.readyState >= 4) {
       tryPlay();
     } else {
