@@ -3,8 +3,20 @@
  * Plays once over ~5 seconds, then holds final frame.
  */
 (function () {
+  const video = document.getElementById('heroVideo');
   const canvas = document.getElementById('heroCanvas');
   if (!canvas) return;
+
+  // If video loads successfully, hide canvas and skip animation
+  if (video) {
+    video.addEventListener('canplay', function () {
+      canvas.style.display = 'none';
+    });
+    video.addEventListener('error', function () {
+      video.style.display = 'none';
+      canvas.style.display = 'block';
+    });
+  }
   const ctx = canvas.getContext('2d');
 
   let w, h, dpr;
