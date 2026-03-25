@@ -218,5 +218,27 @@
 
   <script src="js/hero-animation.js"></script>
   <script src="js/main.js"></script>
+  <!-- Cookie Banner -->
+  <div class="cookie-banner" id="cookieBanner">
+    <p>Diese Website verwendet Google Fonts. Dabei werden Daten an Google übermittelt. Mehr dazu in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
+    <div class="cookie-banner-actions">
+      <button class="btn-cookie btn-cookie-accept" id="cookieAccept">Verstanden</button>
+      <button class="btn-cookie btn-cookie-decline" id="cookieDecline">Ablehnen</button>
+    </div>
+  </div>
+  <script>
+    (function(){
+      if(localStorage.getItem("cookieConsent"))return;
+      var b=document.getElementById("cookieBanner");
+      if(!b)return;
+      setTimeout(function(){b.classList.add("visible");},800);
+      document.getElementById("cookieAccept").addEventListener("click",function(){
+        localStorage.setItem("cookieConsent","accepted");b.classList.remove("visible");
+      });
+      document.getElementById("cookieDecline").addEventListener("click",function(){
+        localStorage.setItem("cookieConsent","declined");b.classList.remove("visible");
+      });
+    })();
+  </script>
 </body>
 </html>

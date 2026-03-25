@@ -82,6 +82,47 @@
             </div>
           </div>
         </div>
+        <div class="contact-form-wrapper">
+          <h2>Nachricht senden</h2>
+          <form class="contact-form" id="contactForm" action="https://formsubmit.co/steinmann.urs@bluewin.ch" method="POST">
+            <input type="hidden" name="_subject" value="Neue Anfrage via Website">
+            <input type="hidden" name="_next" value="kontakt.html">
+            <input type="text" name="_honey" style="display:none">
+            <div class="form-group">
+              <label for="name">Name *</label>
+              <input type="text" id="name" name="name" required placeholder="Ihr Name">
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">E-Mail *</label>
+                <input type="email" id="email" name="email" required placeholder="ihre@email.ch">
+              </div>
+              <div class="form-group">
+                <label for="phone">Telefon</label>
+                <input type="tel" id="phone" name="phone" placeholder="079 000 00 00">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="subject">Betreff</label>
+              <select id="subject" name="subject">
+                <option value="">Bitte wählen...</option>
+                <option value="Neuanlage">Neuanlage / Neubau</option>
+                <option value="Umbau">Umbau / Erweiterung</option>
+                <option value="Reparatur">Reparatur / Störung</option>
+                <option value="Service">Service / Wartung</option>
+                <option value="Beratung">Allgemeine Beratung</option>
+                <option value="Sonstiges">Sonstiges</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Nachricht *</label>
+              <textarea id="message" name="message" rows="5" required placeholder="Wie können wir Ihnen helfen?"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">
+              <i class="ph ph-paper-plane-tilt"></i> Nachricht senden
+            </button>
+          </form>
+        </div>
         <div class="contact-map">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2710.5!2d7.8844!3d47.1167!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478ffca8a8a8a8a9%3A0x0!2sBernstrasse%207a%2C%206152%20H%C3%BCswil!5e0!3m2!1sde!2sch!4v1"
@@ -176,5 +217,27 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <!-- Cookie Banner -->
+  <div class="cookie-banner" id="cookieBanner">
+    <p>Diese Website verwendet Google Fonts. Dabei werden Daten an Google übermittelt. Mehr dazu in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
+    <div class="cookie-banner-actions">
+      <button class="btn-cookie btn-cookie-accept" id="cookieAccept">Verstanden</button>
+      <button class="btn-cookie btn-cookie-decline" id="cookieDecline">Ablehnen</button>
+    </div>
+  </div>
+  <script>
+    (function(){
+      if(localStorage.getItem("cookieConsent"))return;
+      var b=document.getElementById("cookieBanner");
+      if(!b)return;
+      setTimeout(function(){b.classList.add("visible");},800);
+      document.getElementById("cookieAccept").addEventListener("click",function(){
+        localStorage.setItem("cookieConsent","accepted");b.classList.remove("visible");
+      });
+      document.getElementById("cookieDecline").addEventListener("click",function(){
+        localStorage.setItem("cookieConsent","declined");b.classList.remove("visible");
+      });
+    })();
+  </script>
 </body>
 </html>
