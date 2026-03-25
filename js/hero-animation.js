@@ -9,19 +9,45 @@
 
   // If video loads successfully, hide canvas and skip animation
   if (video) {
-    // Wait until fully buffered, then start playback at normal speed
-    function tryPlay() {
+    var videoPlaying = false;
+
+    function showVideo() {
+      if (videoPlaying) return;
+      videoPlaying = true;
       canvas.style.display = 'none';
-      video.play().catch(function () {
-        video.style.display = 'none';
-        canvas.style.display = 'block';
+      video.style.display = 'block';
+    }
+
+    function showCanvas() {
+      video.style.display = 'none';
+      canvas.style.display = 'block';
+    }
+
+    function tryPlay() {
+      // Ensure muted (required for mobile autoplay)
+      video.muted = true;
+      video.play().then(showVideo).catch(function () {
+        // Autoplay failed – try again on first user interaction
+        function playOnInteraction() {
+          video.muted = true;
+          video.play().then(showVideo).catch(showCanvas);
+          document.removeEventListener('touchstart', playOnInteraction);
+          document.removeEventListener('click', playOnInteraction);
+        }
+        document.addEventListener('touchstart', playOnInteraction, { once: true });
+        document.addEventListener('click', playOnInteraction, { once: true });
       });
     }
 
-    if (video.readyState >= 4) {
+    // Start when enough data is buffered, or after 3s timeout
+    if (video.readyState >= 3) {
       tryPlay();
     } else {
-      video.addEventListener('canplaythrough', tryPlay, { once: true });
+      video.addEventListener('canplay', tryPlay, { once: true });
+      // Timeout fallback if canplay never fires
+      setTimeout(function () {
+        if (!videoPlaying) tryPlay();
+      }, 3000);
     }
 
     // Stop on last frame after first play
@@ -29,10 +55,7 @@
       video.pause();
     });
 
-    video.addEventListener('error', function () {
-      video.style.display = 'none';
-      canvas.style.display = 'block';
-    });
+    video.addEventListener('error', showCanvas);
   }
   const ctx = canvas.getContext('2d');
 
