@@ -9,9 +9,20 @@
 
   // If video loads successfully, hide canvas and skip animation
   if (video) {
-    video.addEventListener('canplay', function () {
+    // Slow down playback (0.5 = half speed)
+    video.playbackRate = 0.5;
+
+    // Wait until enough data is buffered before showing
+    video.addEventListener('canplaythrough', function () {
       canvas.style.display = 'none';
+      video.playbackRate = 0.5;
     });
+
+    // Stop on last frame after first play
+    video.addEventListener('ended', function () {
+      video.pause();
+    });
+
     video.addEventListener('error', function () {
       video.style.display = 'none';
       canvas.style.display = 'block';
