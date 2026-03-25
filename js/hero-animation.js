@@ -9,14 +9,24 @@
 
   // If video loads successfully, hide canvas and skip animation
   if (video) {
-    // Slow down playback (0.5 = half speed)
-    video.playbackRate = 0.5;
-
-    // Wait until enough data is buffered before showing
-    video.addEventListener('canplaythrough', function () {
+    // Wait until fully buffered, then start playback
+    function tryPlay() {
+      video.defaultPlaybackRate = 0.75;
+      video.playbackRate = 0.75;
       canvas.style.display = 'none';
-      video.playbackRate = 0.5;
-    });
+      video.play().catch(function () {
+        // Autoplay blocked – show canvas fallback
+        video.style.display = 'none';
+        canvas.style.display = 'block';
+      });
+    }
+
+    // Only start once the browser has enough data buffered
+    if (video.readyState >= 4) {
+      tryPlay();
+    } else {
+      video.addEventListener('canplaythrough', tryPlay, { once: true });
+    }
 
     // Stop on last frame after first play
     video.addEventListener('ended', function () {
