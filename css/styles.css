@@ -552,6 +552,14 @@ ul { list-style: none; }
 .footer-legal a { font-size: 0.82rem; color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.2s; }
 .footer-legal a:hover { color: rgba(255,255,255,0.7); }
 
+.footer-created-by {
+  margin-top: 16px; display: flex; align-items: center; justify-content: center; gap: 10px;
+}
+.footer-created-by span { font-size: 0.78rem; color: rgba(255,255,255,0.3); }
+.created-by-logo { height: 28px; width: auto; opacity: 0.5; transition: opacity 0.2s; }
+.created-by-logo:hover { opacity: 0.8; }
+.footer-legal a:hover { color: rgba(255,255,255,0.7); }
+
 /* ============================================
    Legal Pages (Impressum, Datenschutz)
    ============================================ */
