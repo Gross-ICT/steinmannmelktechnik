@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const prefix = text.substring(0, text.indexOf(match[1]));
         const suffix = text.substring(text.indexOf(match[1]) + match[1].length);
         let current = 0;
-        const duration = 1500;
+        const duration = 4000;
         const start = performance.now();
 
         function update(now) {
