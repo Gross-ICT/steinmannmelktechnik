@@ -55,7 +55,7 @@
       </div>
       <div class="referenzen-grid">
 
-        <div class="referenz-card">
+        <div class="referenz-card" data-referenz="mueller">
           <div class="referenz-icon"><i class="ph ph-farm"></i></div>
           <div class="referenz-content">
             <h3>Landwirtschaftsbetrieb Müller</h3>
@@ -66,10 +66,11 @@
               <span>Kühltechnik</span>
               <span>Neuanlage</span>
             </div>
+            <span class="referenz-mehr">Referenz-Story lesen <i class="ph ph-arrow-right"></i></span>
           </div>
         </div>
 
-        <div class="referenz-card">
+        <div class="referenz-card" data-referenz="buehler">
           <div class="referenz-icon"><i class="ph ph-farm"></i></div>
           <div class="referenz-content">
             <h3>Hof Bühler</h3>
@@ -80,10 +81,11 @@
               <span>Fütterung</span>
               <span>Umbau</span>
             </div>
+            <span class="referenz-mehr">Referenz-Story lesen <i class="ph ph-arrow-right"></i></span>
           </div>
         </div>
 
-        <div class="referenz-card">
+        <div class="referenz-card" data-referenz="wicki">
           <div class="referenz-icon"><i class="ph ph-farm"></i></div>
           <div class="referenz-content">
             <h3>Familie Wicki</h3>
@@ -94,10 +96,11 @@
               <span>Wärmerückgewinnung</span>
               <span>Service</span>
             </div>
+            <span class="referenz-mehr">Referenz-Story lesen <i class="ph ph-arrow-right"></i></span>
           </div>
         </div>
 
-        <div class="referenz-card">
+        <div class="referenz-card" data-referenz="kaufmann">
           <div class="referenz-icon"><i class="ph ph-farm"></i></div>
           <div class="referenz-content">
             <h3>Betrieb Kaufmann</h3>
@@ -108,10 +111,11 @@
               <span>Erweiterung</span>
               <span>Reparatur</span>
             </div>
+            <span class="referenz-mehr">Referenz-Story lesen <i class="ph ph-arrow-right"></i></span>
           </div>
         </div>
 
-        <div class="referenz-card">
+        <div class="referenz-card" data-referenz="hofer">
           <div class="referenz-icon"><i class="ph ph-farm"></i></div>
           <div class="referenz-content">
             <h3>Landwirtschaft Hofer</h3>
@@ -122,10 +126,11 @@
               <span>Neubau</span>
               <span>Belüftung</span>
             </div>
+            <span class="referenz-mehr">Referenz-Story lesen <i class="ph ph-arrow-right"></i></span>
           </div>
         </div>
 
-        <div class="referenz-card">
+        <div class="referenz-card" data-referenz="brunner">
           <div class="referenz-icon"><i class="ph ph-farm"></i></div>
           <div class="referenz-content">
             <h3>Hof Brunner</h3>
@@ -136,6 +141,7 @@
               <span>Reparatur</span>
               <span>Wartung</span>
             </div>
+            <span class="referenz-mehr">Referenz-Story lesen <i class="ph ph-arrow-right"></i></span>
           </div>
         </div>
 
@@ -226,7 +232,7 @@
         </div>
         <div class="footer-contact">
           <h4>Kontakt</h4>
-          <p><i class="ph ph-map-pin"></i> Bernstrasse 7a, 6152 Hüswil</p>
+          <p><a href="https://www.google.com/maps/search/?api=1&query=Bernstrasse+7a,+6152+Hüswil,+Schweiz" target="_blank" rel="noopener"><i class="ph ph-map-pin"></i> Bernstrasse 7a, 6152 Hüswil</a></p>
           <p><i class="ph ph-phone"></i> <a href="tel:+41796412453">079 641 24 53</a></p>
           <p><i class="ph ph-envelope"></i> <a href="mailto:steinmann.urs@bluewin.ch">steinmann.urs@bluewin.ch</a></p>
         </div>
@@ -237,10 +243,52 @@
           <a href="impressum.html">Impressum</a>
           <a href="datenschutz.html">Datenschutz</a>
         </div>
+        <div class="footer-created-by">
+          <span>Diese Webseite wurde erstellt von</span>
+          <a href="https://gross-ict.ch" target="_blank" rel="noopener"><img src="img/gross-ict_logo.png" alt="Gross ICT" class="created-by-logo"></a>
+        </div>
       </div>
     </div>
   </footer>
 
+  <!-- Referenz Modal -->
+  <div class="referenz-modal-overlay" id="referenzModal">
+    <div class="referenz-modal">
+      <button class="referenz-modal-close" id="referenzClose"><i class="ph ph-x"></i></button>
+      <div class="referenz-modal-header">
+        <div class="referenz-modal-icon"><i class="ph ph-farm"></i></div>
+        <div>
+          <h2 id="modalKunde"></h2>
+          <span class="referenz-ort" id="modalOrt"></span>
+        </div>
+      </div>
+      <div class="referenz-modal-body">
+        <div class="referenz-story-section">
+          <h4><i class="ph ph-clipboard-text"></i> Ausgangslage</h4>
+          <p id="modalAusgangslage"></p>
+        </div>
+        <div class="referenz-story-section">
+          <h4><i class="ph ph-wrench"></i> Unsere Lösung</h4>
+          <p id="modalLoesung"></p>
+        </div>
+        <div class="referenz-story-section">
+          <h4><i class="ph ph-check-circle"></i> Ergebnis</h4>
+          <p id="modalErgebnis"></p>
+        </div>
+        <div class="referenz-story-section referenz-story-quote">
+          <i class="ph ph-quotes"></i>
+          <blockquote id="modalZitat"></blockquote>
+          <span class="referenz-story-author" id="modalAutor"></span>
+        </div>
+        <div class="referenz-story-section">
+          <h4><i class="ph ph-tag"></i> Leistungen</h4>
+          <div class="referenz-tags" id="modalTags"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/referenzen.js"></script>
   <script src="js/main.js"></script>
   <!-- Cookie Banner -->
   <div class="cookie-banner" id="cookieBanner">
