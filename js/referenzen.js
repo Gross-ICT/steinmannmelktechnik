@@ -98,11 +98,14 @@ document.addEventListener('DOMContentLoaded', function () {
       if (galerieEl) {
         galerieEl.innerHTML = '';
         if (story.galerie && story.galerie.length > 0) {
-          story.galerie.forEach(function (imgSrc) {
+          story.galerie.forEach(function (imgSrc, index) {
             var img = document.createElement('img');
             img.src = imgSrc;
-            img.alt = 'Projektfoto';
+            img.alt = 'Projektfoto ' + (index + 1);
             img.loading = 'lazy';
+            img.addEventListener('click', function() {
+              openLightbox(story.galerie, index);
+            });
             galerieEl.appendChild(img);
           });
           document.getElementById('modalGalerieSection').style.display = 'block';
@@ -126,6 +129,90 @@ document.addEventListener('DOMContentLoaded', function () {
     if (e.target === modal) closeModal();
   });
   document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape') closeModal();
+    if (e.key === 'Escape') {
+      if (lightboxOverlay.classList.contains('active')) {
+        closeLightbox();
+      } else {
+        closeModal();
+      }
+    }
+    if (lightboxOverlay.classList.contains('active')) {
+      if (e.key === 'ArrowLeft') prevLightboxImage();
+      if (e.key === 'ArrowRight') nextLightboxImage();
+    }
   });
+
+  // Lightbox Implementation
+  var lightboxOverlay = document.getElementById('lightboxOverlay');
+  var lightboxImg = document.getElementById('lightboxImg');
+  var lightboxCounter = document.getElementById('lightboxCounter');
+  var lightboxCloseBtn = document.getElementById('lightboxClose');
+  var lightboxPrevBtn = document.getElementById('lightboxPrev');
+  var lightboxNextBtn = document.getElementById('lightboxNext');
+  
+  var currentGallery = [];
+  var currentIndex = 0;
+
+  function openLightbox(galleryArray, index) {
+    currentGallery = galleryArray;
+    currentIndex = index;
+    updateLightbox();
+    lightboxOverlay.classList.add('active');
+  }
+
+  function closeLightbox() {
+    lightboxOverlay.classList.remove('active');
+  }
+
+  function updateLightbox() {
+    if (currentGallery.length === 0) return;
+    lightboxImg.src = currentGallery[currentIndex];
+    lightboxCounter.textContent = (currentIndex + 1) + ' / ' + currentGallery.length;
+  }
+
+  function nextLightboxImage() {
+    if (currentGallery.length === 0) return;
+    currentIndex = (currentIndex + 1) % currentGallery.length;
+    updateLightbox();
+  }
+
+  function prevLightboxImage() {
+    if (currentGallery.length === 0) return;
+    currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
+    updateLightbox();
+  }
+
+  lightboxCloseBtn.addEventListener('click', closeLightbox);
+  lightboxNextBtn.addEventListener('click', nextLightboxImage);
+  lightboxPrevBtn.addEventListener('click', prevLightboxImage);
+
+  lightboxOverlay.addEventListener('click', function(e) {
+    if (e.target === lightboxOverlay || e.target.classList.contains('lightbox-content')) {
+      closeLightbox();
+    }
+  });
+
+  // Swipe support for Lightbox
+  var touchstartX = 0;
+  var touchendX = 0;
+
+  lightboxOverlay.addEventListener('touchstart', function(event) {
+    touchstartX = event.changedTouches[0].screenX;
+  }, {passive: true});
+
+  lightboxOverlay.addEventListener('touchend', function(event) {
+    touchendX = event.changedTouches[0].screenX;
+    handleSwipe();
+  }, {passive: true});
+
+  function handleSwipe() {
+    var swipeThreshold = 50;
+    if (touchendX < touchstartX - swipeThreshold) {
+      nextLightboxImage(); // Swipe left -> next
+    }
+    if (touchendX > touchstartX + swipeThreshold) {
+      prevLightboxImage(); // Swipe right -> prev
+    }
+  }
+
 });

@@ -733,6 +733,54 @@ ul { list-style: none; }
   transform: scale(1.05);
 }
 
+/* Lightbox */
+.lightbox-overlay {
+  position: fixed; inset: 0; background: rgba(0,0,0,0.9);
+  z-index: 2000; display: flex; align-items: center; justify-content: center;
+  opacity: 0; visibility: hidden; transition: opacity 0.3s ease, visibility 0.3s ease;
+  backdrop-filter: blur(8px);
+}
+.lightbox-overlay.active {
+  opacity: 1; visibility: visible;
+}
+.lightbox-content {
+  position: relative; width: 100%; height: 100%; display: flex;
+  align-items: center; justify-content: center;
+}
+.lightbox-img {
+  max-width: 90vw; max-height: 85vh; object-fit: contain;
+  user-select: none; border-radius: 4px; box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+}
+.lightbox-close {
+  position: absolute; top: 24px; right: 24px;
+  background: rgba(255,255,255,0.1); border: none; color: white;
+  width: 44px; height: 44px; border-radius: 50%; font-size: 24px;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; transition: background 0.2s ease; z-index: 2001;
+}
+.lightbox-close:hover { background: rgba(255,255,255,0.2); }
+.lightbox-nav {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  background: rgba(255,255,255,0.1); border: none; color: white;
+  width: 50px; height: 50px; border-radius: 50%; font-size: 28px;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; transition: background 0.2s ease; z-index: 2001;
+}
+.lightbox-nav:hover { background: rgba(255,255,255,0.2); }
+.lightbox-prev { left: 24px; }
+.lightbox-next { right: 24px; }
+.lightbox-counter {
+  position: absolute; bottom: 24px; left: 50%; transform: translateX(-50%);
+  color: white; font-size: 14px; font-weight: 500; letter-spacing: 1px;
+  background: rgba(0,0,0,0.5); padding: 6px 16px; border-radius: 20px;
+}
+@media (max-width: 768px) {
+  .lightbox-nav { width: 40px; height: 40px; font-size: 24px; }
+  .lightbox-prev { left: 12px; }
+  .lightbox-next { right: 12px; }
+  .lightbox-img { max-width: 95vw; }
+}
+
 .referenz-story-quote {
   background: rgba(45,106,79,0.04); border-left: 3px solid var(--clr-primary);
   padding: 20px 24px; border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
