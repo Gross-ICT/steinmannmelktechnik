@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <link rel="icon" type="image/png" href="img/favicon.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Unsere Partner: GEA Farm Technologies, ITIN & HOCH, Buri AG, Hanskamp, Wirth Fütterungstechnik, Hallenplan und Huswiss.">
-  <title>Partner – Steinmann Melktechnik GmbH</title>
+  <meta name="description" content="Galerie – Projekte und Arbeiten der Steinmann Melktechnik GmbH. Melkanlagen, Stalleinrichtungen und mehr.">
+  <title>Galerie – Steinmann Melktechnik GmbH</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
@@ -30,8 +30,8 @@
         <li><a href="ueber-uns.html" class="nav-link">Über uns</a></li>
         <li><a href="dienstleistungen.html" class="nav-link">Dienstleistungen</a></li>
         <li><a href="referenzen.html" class="nav-link">Referenzen</a></li>
-        <li><a href="galerie.html" class="nav-link">Galerie</a></li>
-        <li><a href="partner.html" class="nav-link active">Partner</a></li>
+        <li><a href="galerie.html" class="nav-link active">Galerie</a></li>
+        <li><a href="partner.html" class="nav-link">Partner</a></li>
         <li><a href="kontakt.html" class="nav-link nav-cta">Kontakt</a></li>
       </ul>
     </div>
@@ -40,94 +40,128 @@
   <!-- Page Header -->
   <section class="page-header">
     <div class="container">
-      <span class="section-tag">Unsere Partner</span>
-      <h1>Zusammen <span class="text-accent">stark</span></h1>
-      <p>Wir arbeiten mit führenden Herstellern zusammen, um Ihnen die beste Technik und Qualität zu bieten.</p>
+      <span class="section-tag">Galerie</span>
+      <h1>Unsere <span class="text-accent">Projekte</span></h1>
+      <p>Einblicke in unsere Arbeit – von der Montage bis zur fertigen Anlage. Hier sehen Sie eine Auswahl unserer realisierten Projekte.</p>
     </div>
   </section>
 
-  <!-- Partners Grid -->
+  <!-- Gallery Filter -->
   <section class="section">
     <div class="container">
-      <div class="partners-detail-grid">
+      <div class="galerie-filter">
+        <button class="filter-btn active" data-filter="alle">Alle</button>
+        <button class="filter-btn" data-filter="melktechnik">Melktechnik</button>
+        <button class="filter-btn" data-filter="stalleinrichtung">Stalleinrichtungen</button>
+        <button class="filter-btn" data-filter="kuehltechnik">Kühltechnik</button>
+        <button class="filter-btn" data-filter="fuetterung">Fütterung</button>
+      </div>
 
-        <div class="partner-detail-card">
-          <div class="partner-detail-header">
-            <div class="partner-logo-area"><i class="ph ph-factory"></i></div>
-            <div>
-              <h3>GEA Farm Technologies</h3>
-              <span class="partner-tag">Melktechnik</span>
-            </div>
+      <div class="galerie-grid" id="galerieGrid">
+
+        <div class="galerie-item" data-category="melktechnik">
+          <div class="galerie-placeholder">
+            <i class="ph ph-image"></i>
           </div>
-          <p>GEA ist einer der weltweit führenden Anbieter von Melk- und Kühltechnik. Innovative Lösungen für automatisches und konventionelles Melken, Herdenmanagement und Stallklimatisierung. Als GEA-Partner bieten wir Ihnen die komplette Produktpalette inkl. Installation und Service.</p>
+          <div class="galerie-overlay">
+            <h3>Melkstand 2x6 Fischgräte</h3>
+            <p>GEA Melkanlage – Grossdietwil</p>
+            <span class="galerie-tag">Melktechnik</span>
+          </div>
         </div>
 
-        <div class="partner-detail-card">
-          <div class="partner-detail-header">
-            <div class="partner-logo-area"><i class="ph ph-barn"></i></div>
-            <div>
-              <h3>ITIN & HOCH GmbH</h3>
-              <span class="partner-tag">Fütterungstechnik</span>
-            </div>
+        <div class="galerie-item" data-category="stalleinrichtung">
+          <div class="galerie-placeholder">
+            <i class="ph ph-image"></i>
           </div>
-          <p>ITIN & HOCH ist Spezialist für Fütterungstechnik und Stalleinrichtungen. Schweizer Qualität für Ihren Stall – von Fütterungsanlagen über Stalleinrichtungen bis hin zu individuellen Sonderlösungen für Ihren Betrieb.</p>
+          <div class="galerie-overlay">
+            <h3>Laufstall Neubau</h3>
+            <p>Liegeboxen und Laufgang – Pfaffnau</p>
+            <span class="galerie-tag">Stalleinrichtung</span>
+          </div>
         </div>
 
-        <div class="partner-detail-card">
-          <div class="partner-detail-header">
-            <div class="partner-logo-area"><i class="ph ph-snowflake"></i></div>
-            <div>
-              <h3>Buri AG</h3>
-              <span class="partner-tag">Milchkühlanlagen</span>
-            </div>
+        <div class="galerie-item" data-category="kuehltechnik">
+          <div class="galerie-placeholder">
+            <i class="ph ph-image"></i>
           </div>
-          <p>Die Buri AG ist Ihr Experte für professionelle Milchkühlanlagen. Zuverlässige Kühlung für beste Milchqualität – von Direktkühlern über Tankkühlungen bis hin zu Wärmerückgewinnungssystemen.</p>
+          <div class="galerie-overlay">
+            <h3>Milchkühltank 2000L</h3>
+            <p>Buri AG Direktkühler – Willisau</p>
+            <span class="galerie-tag">Kühltechnik</span>
+          </div>
         </div>
 
-        <div class="partner-detail-card">
-          <div class="partner-detail-header">
-            <div class="partner-logo-area"><i class="ph ph-cow"></i></div>
-            <div>
-              <h3>Hanskamp</h3>
-              <span class="partner-tag">Tierpflege & Stallhygiene</span>
-            </div>
+        <div class="galerie-item" data-category="melktechnik">
+          <div class="galerie-placeholder">
+            <i class="ph ph-image"></i>
           </div>
-          <p>Hanskamp bietet innovative Lösungen für Tierpflege und Stallhygiene. Kuhbürsten, Viehputzmaschinen und weitere Produkte für das Wohlbefinden Ihrer Tiere und einen sauberen Stall.</p>
+          <div class="galerie-overlay">
+            <h3>Rohrmelkanlage</h3>
+            <p>Anbindestall Modernisierung – Zell</p>
+            <span class="galerie-tag">Melktechnik</span>
+          </div>
         </div>
 
-        <div class="partner-detail-card">
-          <div class="partner-detail-header">
-            <div class="partner-logo-area"><i class="ph ph-bowl-food"></i></div>
-            <div>
-              <h3>Wirth Fütterungstechnik AG</h3>
-              <span class="partner-tag">Fütterungstechnik</span>
-            </div>
+        <div class="galerie-item" data-category="fuetterung">
+          <div class="galerie-placeholder">
+            <i class="ph ph-image"></i>
           </div>
-          <p>Wirth Fütterungstechnik bietet moderne Fütterungssysteme für eine effiziente und tiergerechte Fütterung. Automatische Fütterungsanlagen, Mischsysteme und individuelle Fütterungskonzepte für Ihren Betrieb.</p>
+          <div class="galerie-overlay">
+            <h3>Automatische Fütterung</h3>
+            <p>ITIN & HOCH Fütterungsanlage – Altbüron</p>
+            <span class="galerie-tag">Fütterung</span>
+          </div>
         </div>
 
-        <div class="partner-detail-card">
-          <div class="partner-detail-header">
-            <div class="partner-logo-area"><i class="ph ph-warehouse"></i></div>
-            <div>
-              <h3>Hallenplan GmbH</h3>
-              <span class="partner-tag">Hallenbau</span>
-            </div>
+        <div class="galerie-item" data-category="stalleinrichtung">
+          <div class="galerie-placeholder">
+            <i class="ph ph-image"></i>
           </div>
-          <p>Hallenplan GmbH ist Ihr Partner für Planung und Bau von landwirtschaftlichen Hallen und Gebäuden. Massgeschneiderte Lösungen für Ställe, Lagerhallen und Wirtschaftsgebäude.</p>
+          <div class="galerie-overlay">
+            <h3>Stallumbau komplett</h3>
+            <p>Anbinde- zu Laufstall – Ufhusen</p>
+            <span class="galerie-tag">Stalleinrichtung</span>
+          </div>
         </div>
 
-        <div class="partner-detail-card">
-          <div class="partner-detail-header">
-            <div class="partner-logo-area"><i class="ph ph-buildings"></i></div>
-            <div>
-              <h3>Huswiss GmbH</h3>
-              <span class="partner-tag">Hofzubehör</span>
-            </div>
+        <div class="galerie-item" data-category="kuehltechnik">
+          <div class="galerie-placeholder">
+            <i class="ph ph-image"></i>
           </div>
-          <p>Huswiss GmbH liefert Schweizer Qualitätsprodukte für die Landwirtschaft. Ein breites Sortiment an Hofzubehör und Verbrauchsmaterial für den täglichen Betrieb auf Ihrem Hof.</p>
+          <div class="galerie-overlay">
+            <h3>Wärmerückgewinnung</h3>
+            <p>Energieeffiziente Kühlung – Grossdietwil</p>
+            <span class="galerie-tag">Kühltechnik</span>
+          </div>
         </div>
 
+        <div class="galerie-item" data-category="melktechnik">
+          <div class="galerie-placeholder">
+            <i class="ph ph-image"></i>
+          </div>
+          <div class="galerie-overlay">
+            <h3>Melkstand Erweiterung</h3>
+            <p>Zusätzliche Melkplätze – Altbüron</p>
+            <span class="galerie-tag">Melktechnik</span>
+          </div>
+        </div>
+
+        <div class="galerie-item" data-category="fuetterung">
+          <div class="galerie-placeholder">
+            <i class="ph ph-image"></i>
+          </div>
+          <div class="galerie-overlay">
+            <h3>Futtertisch-Einrichtung</h3>
+            <p>Fressgitter und Futtertisch – Willisau</p>
+            <span class="galerie-tag">Fütterung</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="galerie-hinweis">
+        <p><i class="ph ph-info"></i> Die Platzhalter werden durch echte Projektfotos ersetzt. Senden Sie uns Ihre Bilder oder wir fotografieren gerne vor Ort.</p>
       </div>
     </div>
   </section>
@@ -136,11 +170,11 @@
   <section class="cta-banner">
     <div class="container">
       <div class="cta-content">
-        <h2>Beratung zu Produkten unserer Partner?</h2>
-        <p>Wir helfen Ihnen gerne, das passende Produkt für Ihren Betrieb zu finden.</p>
+        <h2>Ihr Projekt soll hier stehen?</h2>
+        <p>Kontaktieren Sie uns – wir setzen auch Ihr Vorhaben professionell um.</p>
         <div class="cta-actions">
           <a href="tel:+41796412453" class="btn btn-primary"><i class="ph ph-phone"></i> 079 641 24 53</a>
-          <a href="kontakt.html" class="btn btn-outline-dark">Kontakt <i class="ph ph-arrow-right"></i></a>
+          <a href="kontakt.html" class="btn btn-outline-dark">Zum Kontaktformular <i class="ph ph-arrow-right"></i></a>
         </div>
       </div>
     </div>
@@ -162,9 +196,7 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="ueber-uns.html">Über uns</a></li>
             <li><a href="dienstleistungen.html">Dienstleistungen</a></li>
-            <li><a href="referenzen.html" class="nav-link">Referenzen</a></li>
-        <li><a href="galerie.html" class="nav-link">Galerie</a></li>
-        <li><a href="referenzen.html">Referenzen</a></li>
+            <li><a href="referenzen.html">Referenzen</a></li>
             <li><a href="galerie.html">Galerie</a></li>
             <li><a href="partner.html">Partner</a></li>
             <li><a href="kontakt.html">Kontakt</a></li>
@@ -198,6 +230,7 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script src="js/galerie.js"></script>
   <!-- Cookie Banner -->
   <div class="cookie-banner" id="cookieBanner">
     <p>Diese Website verwendet Google Fonts. Dabei werden Daten an Google übermittelt. Mehr dazu in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
