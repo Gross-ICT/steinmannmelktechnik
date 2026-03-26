@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <link rel="icon" type="image/png" href="img/favicon.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Steinmann Melktechnik GmbH – Ihr Partner für Melkanlagen, Stalleinrichtungen und Hoftechnik in Hüswil, Luzern. Verkauf, Montage, Service und Reparatur.">
-  <title>Steinmann Melktechnik GmbH – Hof- und Stalltechnik aus Hüswil</title>
+  <meta name="description" content="Produkte der Steinmann Melktechnik GmbH – GEA DairyRobot, GQ-Liner, FutureCow, DairyFeed und Rindlisbacher Futterband.">
+  <title>Produkte – Steinmann Melktechnik GmbH</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
@@ -15,7 +15,7 @@
 <body>
 
   <!-- Navigation -->
-  <nav class="navbar" id="navbar">
+  <nav class="navbar navbar-inner" id="navbar">
     <div class="container nav-container">
       <a href="index.html" class="nav-logo">
         <img src="img/logo.png" alt="Steinmann Melktechnik Logo" class="logo-img">
@@ -26,10 +26,10 @@
         <span></span>
       </button>
       <ul class="nav-menu" id="navMenu">
-        <li><a href="index.html" class="nav-link active">Home</a></li>
+        <li><a href="index.html" class="nav-link">Home</a></li>
         <li><a href="ueber-uns.html" class="nav-link">Über uns</a></li>
         <li><a href="dienstleistungen.html" class="nav-link">Dienstleistungen</a></li>
-        <li><a href="produkte.html" class="nav-link">Produkte</a></li>
+        <li><a href="produkte.html" class="nav-link active">Produkte</a></li>
         <li><a href="referenzen.html" class="nav-link">Referenzen</a></li>
         <li><a href="galerie.html" class="nav-link">Galerie</a></li>
         <li><a href="partner.html" class="nav-link">Partner</a></li>
@@ -38,114 +38,90 @@
     </div>
   </nav>
 
-  <!-- Hero Section with Video (plays once, max 5s) -->
-  <section class="hero" id="home">
-    <div class="hero-video-wrapper">
-      <video id="heroVideo" class="hero-video" autoplay muted playsinline preload="auto" webkit-playsinline>
-        <source src="video/hero.mp4" type="video/mp4">
-      </video>
-      <canvas id="heroCanvas" class="hero-canvas"></canvas>
-      <div class="hero-overlay"></div>
-    </div>
-    <div class="container hero-content">
-      <h1>Ihr Fachpartner für <span class="text-accent">Melktechnik</span> & Stalleinrichtungen</h1>
-      <p class="hero-desc">Verkauf, Montage, Service und Reparatur von Melkanlagen und Hofzubehör – kompetent, zuverlässig und persönlich.</p>
-      <div class="hero-actions">
-        <a href="kontakt.html" class="btn btn-primary">
-          <i class="ph ph-phone"></i> Kontakt aufnehmen
-        </a>
-        <a href="dienstleistungen.html" class="btn btn-outline">
-          Unsere Leistungen <i class="ph ph-arrow-right"></i>
-        </a>
-      </div>
-      <div class="hero-stats">
-        <div class="stat">
-          <span class="stat-number">seit 2015</span>
-          <span class="stat-label">Im Einsatz für Sie</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat">
-          <span class="stat-number">5+</span>
-          <span class="stat-label">Starke Partner</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat">
-          <span class="stat-number">100%</span>
-          <span class="stat-label">Schweizer Qualität</span>
-        </div>
-      </div>
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <span class="section-tag">Produkte</span>
+      <h1>Unsere <span class="text-accent">Produktauswahl</span></h1>
+      <p>Hochwertige Technik von führenden Herstellern – für einen effizienten und tiergerechten Betrieb.</p>
     </div>
   </section>
 
-  <!-- Intro Teaser Section -->
-  <section class="section intro-teaser">
+  <!-- Products Grid -->
+  <section class="section">
     <div class="container">
-      <div class="teaser-grid">
-        <div class="teaser-card">
-          <div class="teaser-icon"><i class="ph ph-wrench"></i></div>
-          <h3>Montage & Installation</h3>
-          <p>Professionelle Montage von Melkanlagen, Stalleinrichtungen und Kühltechnik – alles aus einer Hand.</p>
-          <a href="dienstleistungen.html" class="teaser-link">Mehr erfahren <i class="ph ph-arrow-right"></i></a>
-        </div>
-        <div class="teaser-card">
-          <div class="teaser-icon"><i class="ph ph-gear"></i></div>
-          <h3>Service & Reparatur</h3>
-          <p>Schnelle Hilfe bei Störungen und regelmässige Wartung. Wir halten Ihre Technik zuverlässig am Laufen.</p>
-          <a href="dienstleistungen.html" class="teaser-link">Mehr erfahren <i class="ph ph-arrow-right"></i></a>
-        </div>
-        <div class="teaser-card">
-          <div class="teaser-icon"><i class="ph ph-handshake"></i></div>
-          <h3>Starke Partner</h3>
-          <p>Zusammenarbeit mit führenden Herstellern wie GEA, Buri AG, Hallenplan GmbH und weiteren Marken.</p>
-          <a href="partner.html" class="teaser-link">Unsere Partner <i class="ph ph-arrow-right"></i></a>
-        </div>
+      <div class="section-header">
+        <h2>Melktechnik & <span class="text-accent">Automation</span></h2>
+        <p class="section-subtitle">Modernste Melk- und Fütterungstechnik für Ihren Betrieb – wir beraten, liefern und installieren.</p>
       </div>
-    </div>
-  </section>
 
-  <!-- About Teaser -->
-  <section class="section about-teaser">
-    <div class="container">
-      <div class="about-teaser-grid">
-        <div class="about-teaser-content">
-          <span class="section-tag">Über uns</span>
-          <h2>Kompetenz trifft <span class="text-accent">Leidenschaft</span></h2>
-          <p>Steinmann Melktechnik GmbH ist Ihr inhabergeführter Fachbetrieb für Hof- und Stalltechnik in Hüswil, Kanton Luzern. Seit 2015 betreut Urs Steinmann Landwirtschaftsbetriebe in der ganzen Region – persönlich, kompetent und zuverlässig.</p>
-          <p>Ob Neuinstallation, Umbau oder Reparatur – wir begleiten Sie von der Beratung bis zur Inbetriebnahme und darüber hinaus.</p>
-          <a href="ueber-uns.html" class="btn btn-primary-dark">
-            Mehr über uns <i class="ph ph-arrow-right"></i>
-          </a>
-        </div>
-        <div class="about-teaser-highlights">
-          <div class="highlight">
-            <div class="highlight-icon"><i class="ph ph-user-circle"></i></div>
-            <div>
-              <h4>Persönliche Beratung</h4>
-              <p>Individuelle Lösungen für jeden Hof</p>
-            </div>
+      <div class="produkte-grid">
+
+        <a href="https://www.gea.com/de/products/milking-farming-barn/milking-solutions/automatic-milking/dairyrobot-r9500/" target="_blank" rel="noopener" class="produkt-card">
+          <div class="produkt-img">
+            <img src="img/produkte/dairyrobot.jpg" alt="GEA DairyRobot R9500" loading="lazy">
+            <span class="produkt-badge">GEA</span>
           </div>
-          <div class="highlight">
-            <div class="highlight-icon"><i class="ph ph-clock-clockwise"></i></div>
-            <div>
-              <h4>Schnelle Reaktion</h4>
-              <p>Zuverlässiger Notfall-Service</p>
-            </div>
+          <div class="produkt-content">
+            <h3>GEA DairyRobot R9500</h3>
+            <span class="produkt-kategorie">Automatisches Melksystem</span>
+            <p>Der DairyRobot R9500 wurde für einen optimalen Melkprozess und ein flexibleres Zeitmanagement entwickelt. Grössere Flexibilität, gesteigerte Effizienz und verbesserte Kuhgesundheit – die Kühe entscheiden selbst, wann sie gemolken werden.</p>
+            <span class="produkt-link">Mehr erfahren <i class="ph ph-arrow-right"></i></span>
           </div>
-          <div class="highlight">
-            <div class="highlight-icon"><i class="ph ph-certificate"></i></div>
-            <div>
-              <h4>Qualitätsprodukte</h4>
-              <p>Nur bewährte Marken und Technik</p>
-            </div>
+        </a>
+
+        <a href="https://www.gea.com/de/products/milking-farming-barn/dairyservice-dairy-farm-service/milking-liner-overview/" target="_blank" rel="noopener" class="produkt-card">
+          <div class="produkt-img">
+            <img src="img/produkte/gq-liner.jpg" alt="GEA GQ-Liner" loading="lazy">
+            <span class="produkt-badge">GEA</span>
           </div>
-          <div class="highlight">
-            <div class="highlight-icon"><i class="ph ph-map-pin"></i></div>
-            <div>
-              <h4>Regional verwurzelt</h4>
-              <p>Aus Hüswil für die Region Luzern</p>
-            </div>
+          <div class="produkt-content">
+            <h3>GEA GQ-Liner</h3>
+            <span class="produkt-kategorie">Melkbechergummi</span>
+            <p>Die GEA GQ Melkbechergummis kombinieren die Vorteile runder und quadratischer Formen für ein schnelles und schonendes Melken. Das innovative Design sorgt für eine optimale Anpassung an die Zitze und fördert die Eutergesundheit.</p>
+            <span class="produkt-link">Mehr erfahren <i class="ph ph-arrow-right"></i></span>
           </div>
-        </div>
+        </a>
+
+        <a href="https://www.gea.com/de/products/milking-farming-barn/hygiene/animal-hygiene/futurecow-prep-system/" target="_blank" rel="noopener" class="produkt-card">
+          <div class="produkt-img">
+            <img src="img/produkte/futurecow.jpg" alt="GEA FutureCow Prep System" loading="lazy">
+            <span class="produkt-badge">GEA</span>
+          </div>
+          <div class="produkt-content">
+            <h3>GEA FutureCow Prep System</h3>
+            <span class="produkt-kategorie">Zitzenvorbehandlung</span>
+            <p>Das FutureCow Prep System ermöglicht effizientes Waschen, Desinfizieren, Trocknen und Stimulieren der Zitzen in einem einzigen Arbeitsgang. Die mechanische Bürsteneinheit sorgt für verbesserte Hygiene und optimale Euter-Vorbereitung.</p>
+            <span class="produkt-link">Mehr erfahren <i class="ph ph-arrow-right"></i></span>
+          </div>
+        </a>
+
+        <a href="https://www.gea.com/de/products/milking-farming-barn/dairyfeed-feeding-systems/feeding-robot-dairyfeed-f4500/" target="_blank" rel="noopener" class="produkt-card">
+          <div class="produkt-img">
+            <img src="img/produkte/dairyfeed.jpg" alt="GEA DairyFeed F4500" loading="lazy">
+            <span class="produkt-badge">GEA</span>
+          </div>
+          <div class="produkt-content">
+            <h3>GEA DairyFeed F4500</h3>
+            <span class="produkt-kategorie">Fütterungsroboter</span>
+            <p>Der autonom arbeitende Fütterungsroboter wiegt, mischt und verteilt bis zu 2,2 m³ frisches TMR-Futter. Er übernimmt die arbeitsintensive Fütterung rund um die Uhr und sorgt für eine präzise, bedarfsgerechte Versorgung der Herde.</p>
+            <span class="produkt-link">Mehr erfahren <i class="ph ph-arrow-right"></i></span>
+          </div>
+        </a>
+
+        <a href="https://www.rindlisbacherag.ch/schafe-ziegen/futterband" target="_blank" rel="noopener" class="produkt-card">
+          <div class="produkt-img">
+            <img src="img/produkte/futterband.png" alt="Rindlisbacher Futterband" loading="lazy">
+            <span class="produkt-badge">Rindlisbacher</span>
+          </div>
+          <div class="produkt-content">
+            <h3>Rindlisbacher Futterband</h3>
+            <span class="produkt-kategorie">Fütterungstechnik</span>
+            <p>Das Futterband ermöglicht schnelle und gleichmässige Futterverteilung bei geringem Platzbedarf. Mit anpassbarer Geschwindigkeit, feuerverzinkter Konstruktion und integrierter Fangeinrichtung – modular erweiterbar für jeden Betrieb.</p>
+            <span class="produkt-link">Mehr erfahren <i class="ph ph-arrow-right"></i></span>
+          </div>
+        </a>
+
       </div>
     </div>
   </section>
@@ -154,8 +130,8 @@
   <section class="cta-banner">
     <div class="container">
       <div class="cta-content">
-        <h2>Projekt geplant? Wir beraten Sie gerne.</h2>
-        <p>Ob Neuanlage, Umbau oder Reparatur – rufen Sie uns an oder schreiben Sie uns.</p>
+        <h2>Interesse an einem Produkt?</h2>
+        <p>Wir beraten Sie gerne und erstellen ein unverbindliches Angebot für Ihren Betrieb.</p>
         <div class="cta-actions">
           <a href="tel:+41796412453" class="btn btn-primary"><i class="ph ph-phone"></i> 079 641 24 53</a>
           <a href="kontakt.html" class="btn btn-outline-dark">Zum Kontaktformular <i class="ph ph-arrow-right"></i></a>
@@ -218,7 +194,6 @@
     </div>
   </footer>
 
-  <script src="js/hero-animation.js"></script>
   <script src="js/main.js"></script>
   <!-- Cookie Banner -->
   <div class="cookie-banner" id="cookieBanner">

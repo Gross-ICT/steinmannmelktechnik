@@ -449,6 +449,54 @@ ul { list-style: none; }
 
 .process-step h3 { font-size: 1.05rem; font-weight: 600; margin-bottom: 8px; }
 .process-step p { font-size: 0.88rem; color: var(--clr-text-light); line-height: 1.6; }
+/* ============================================
+   Products Page
+   ============================================ */
+
+.produkte-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
+
+.produkt-card {
+  background: var(--clr-card); border: 1px solid var(--clr-border);
+  border-radius: var(--radius-lg); overflow: hidden; transition: var(--transition);
+  display: block; text-decoration: none; color: inherit;
+}
+.produkt-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: var(--clr-primary-light); }
+
+.produkt-img {
+  position: relative; width: 100%; aspect-ratio: 16/10; overflow: hidden;
+  background: var(--clr-bg-alt);
+}
+.produkt-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+.produkt-card:hover .produkt-img img { transform: scale(1.05); }
+
+.produkt-badge {
+  position: absolute; top: 12px; left: 12px;
+  background: var(--clr-primary); color: white;
+  font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.05em; padding: 4px 12px; border-radius: 20px;
+}
+
+.produkt-content { padding: 24px 28px 28px; }
+.produkt-content h3 { font-size: 1.15rem; font-weight: 600; margin-bottom: 6px; }
+
+.produkt-kategorie {
+  display: inline-block; font-size: 0.78rem; font-weight: 600; color: var(--clr-primary);
+  background: rgba(45,106,79,0.08); padding: 3px 12px; border-radius: 20px;
+  margin-bottom: 12px;
+}
+
+.produkt-content > p { font-size: 0.92rem; color: var(--clr-text-light); line-height: 1.7; margin-bottom: 16px; }
+
+.produkt-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 0.9rem; font-weight: 600; color: var(--clr-primary);
+  transition: var(--transition);
+}
+.produkt-card:hover .produkt-link { gap: 10px; }
+
+@media (max-width: 768px) {
+  .produkte-grid { grid-template-columns: 1fr; }
+}
 
 /* ============================================
    Partners Page
