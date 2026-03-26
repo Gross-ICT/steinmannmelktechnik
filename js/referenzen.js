@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
       ergebnis: 'Die Melkzeit konnte um rund 40% reduziert werden. Die Milchqualität hat sich deutlich verbessert und das Herdenmanagement-System ermöglicht eine gezielte Überwachung jeder einzelnen Kuh. Der Betrieb spart täglich wertvolle Arbeitszeit.',
       zitat: 'Urs Steinmann hat unsere neue Melkanlage perfekt installiert. Schnell, sauber und zuverlässig. Bei Fragen ist er immer erreichbar.',
       autor: 'Familie Müller, Grossdietwil',
+      galerie: ['img/referenzen/melkanlage.png', 'img/referenzen/gallery_1.png', 'img/referenzen/gallery_2.png', 'img/referenzen/gallery_3.png', 'img/referenzen/gallery_4.png'],
       tags: ['Melkanlage', 'Kühltechnik', 'Neuanlage', 'GEA']
     },
     buehler: {
@@ -18,6 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
       ergebnis: 'Die Kühe zeigen deutlich mehr Bewegung und Wohlbefinden. Die automatisierte Fütterung spart täglich über eine Stunde Arbeitszeit. Die Milchleistung hat sich seit dem Umbau spürbar gesteigert.',
       zitat: 'Der Umbau war eine grosse Investition, aber mit Steinmann Melktechnik hatten wir einen Partner, der alles professionell koordiniert hat. Das Ergebnis übertrifft unsere Erwartungen.',
       autor: 'Familie Bühler, Zell',
+      galerie: ['img/referenzen/stalleinrichtung.png', 'img/referenzen/gallery_2.png', 'img/referenzen/gallery_4.png', 'img/referenzen/gallery_6.png', 'img/referenzen/gallery_3.png'],
       tags: ['Stalleinrichtung', 'Fütterung', 'Umbau', 'ITIN & HOCH']
     },
     wicki: {
@@ -28,6 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
       ergebnis: 'Die Energiekosten für die Kühlung konnten um rund 30% gesenkt werden. Dank der Wärmerückgewinnung spart der Betrieb zusätzlich beim Warmwasser. Ein regelmässiger Servicevertrag sichert den störungsfreien Betrieb.',
       zitat: 'Die neue Kühlung läuft einwandfrei und die Wärmerückgewinnung merken wir jeden Monat auf der Stromrechnung. Der Service von Urs ist immer prompt und unkompliziert.',
       autor: 'Familie Wicki, Willisau',
+      galerie: ['img/referenzen/kuehltank.png', 'img/referenzen/gallery_5.png', 'img/referenzen/gallery_1.png', 'img/referenzen/gallery_4.png', 'img/referenzen/gallery_6.png'],
       tags: ['Kühltechnik', 'Wärmerückgewinnung', 'Service', 'Buri AG']
     },
     kaufmann: {
@@ -38,6 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
       ergebnis: 'Die Melkkapazität wurde um 30% erhöht. Das gleichmässige Vakuum sorgt für schonendes Melken und gesunde Euter. Die Milchmengenmessung ermöglicht eine bessere Kontrolle der Einzeltierleistung.',
       zitat: 'Urs hat unsere bestehende Anlage clever erweitert, ohne dass wir alles neu kaufen mussten. Das war wirtschaftlich die beste Lösung für unseren Betrieb.',
       autor: 'Familie Kaufmann, Altbüron',
+      galerie: ['img/referenzen/melkplatz.png', 'img/referenzen/gallery_1.png', 'img/referenzen/gallery_3.png', 'img/referenzen/gallery_5.png', 'img/referenzen/gallery_2.png'],
       tags: ['Melkanlage', 'Erweiterung', 'Reparatur', 'GEA']
     },
     hofer: {
@@ -48,6 +52,7 @@ document.addEventListener('DOMContentLoaded', function () {
       ergebnis: 'Der neue Stall bietet optimale Bedingungen für die Tiere. Die automatische Entmistung und Belüftung reduzieren den Arbeitsaufwand massiv. Familie Hofer kann sich auf das Wesentliche konzentrieren: ihre Kühe.',
       zitat: 'Von der Beratung über die Planung bis zur Montage – alles aus einer Hand. Wir können Steinmann Melktechnik nur empfehlen.',
       autor: 'Familie Hofer, Pfaffnau',
+      galerie: ['img/referenzen/laufstall.png', 'img/referenzen/gallery_4.png', 'img/referenzen/gallery_2.png', 'img/referenzen/gallery_6.png', 'img/referenzen/gallery_5.png'],
       tags: ['Stalleinrichtung', 'Neubau', 'Belüftung', 'Entmistung']
     },
     brunner: {
@@ -58,6 +63,7 @@ document.addEventListener('DOMContentLoaded', function () {
       ergebnis: 'Die Anlage läuft seit der Überholung störungsfrei. Ein Servicevertrag mit regelmässiger Wartung verhindert künftige Ausfälle. Familie Brunner ist seit 2018 treuer Stammkunde.',
       zitat: 'Als unsere Kühlung am Sonntagmorgen ausfiel, war Urs innerhalb einer Stunde vor Ort. So einen Service findet man selten!',
       autor: 'Familie Brunner, Ufhusen',
+      galerie: ['img/referenzen/reparatur.png', 'img/referenzen/gallery_5.png', 'img/referenzen/gallery_1.png', 'img/referenzen/gallery_3.png', 'img/referenzen/gallery_6.png'],
       tags: ['Notfall-Service', 'Reparatur', 'Wartung', 'Servicevertrag']
     }
   };
@@ -87,6 +93,23 @@ document.addEventListener('DOMContentLoaded', function () {
         span.textContent = tag;
         tagsEl.appendChild(span);
       });
+
+      var galerieEl = document.getElementById('modalGalerie');
+      if (galerieEl) {
+        galerieEl.innerHTML = '';
+        if (story.galerie && story.galerie.length > 0) {
+          story.galerie.forEach(function (imgSrc) {
+            var img = document.createElement('img');
+            img.src = imgSrc;
+            img.alt = 'Projektfoto';
+            img.loading = 'lazy';
+            galerieEl.appendChild(img);
+          });
+          document.getElementById('modalGalerieSection').style.display = 'block';
+        } else {
+          document.getElementById('modalGalerieSection').style.display = 'none';
+        }
+      }
 
       modal.classList.add('active');
       document.body.style.overflow = 'hidden';
