@@ -197,11 +197,11 @@ document.addEventListener('DOMContentLoaded', function () {
   var touchendX = 0;
 
   lightboxOverlay.addEventListener('touchstart', function(event) {
-    touchstartX = event.changedTouches[0].screenX;
+    touchstartX = event.changedTouches[0].clientX;
   }, {passive: true});
 
   lightboxOverlay.addEventListener('touchend', function(event) {
-    touchendX = event.changedTouches[0].screenX;
+    touchendX = event.changedTouches[0].clientX;
     handleSwipe();
   }, {passive: true});
 
