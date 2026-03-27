@@ -1027,6 +1027,8 @@ ul { list-style: none; }
 }
 
 @media (max-width: 768px) {
+  .navbar { padding: 4px 0; }
+  .logo-img { width: 55px; height: 55px; }
   .nav-toggle { display: flex; }
 
   .nav-menu {

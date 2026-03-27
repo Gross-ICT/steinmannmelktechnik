@@ -83,6 +83,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { passive: true });
   }
 
+  // --- Dynamic Years Calculation ---
+  document.querySelectorAll('.stat-number[data-start-year]').forEach(stat => {
+    const startYear = parseInt(stat.getAttribute('data-start-year'), 10);
+    const currentYear = new Date().getFullYear();
+    stat.textContent = (currentYear - startYear) + " Jahre";
+  });
+
   // --- Counter animation for hero stats ---
   const stats = document.querySelectorAll('.stat-number');
   if (stats.length > 0) {
