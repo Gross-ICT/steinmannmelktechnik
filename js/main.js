@@ -83,12 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { passive: true });
   }
 
-  // --- Dynamic Years Calculation ---
-  document.querySelectorAll('.stat-number[data-start-year]').forEach(stat => {
-    const startYear = parseInt(stat.getAttribute('data-start-year'), 10);
-    const currentYear = new Date().getFullYear();
-    stat.textContent = (currentYear - startYear) + " Jahre";
-  });
+  // --- Dynamic Years Calculation removed logic ---
 
   // --- Counter animation for hero stats ---
   const stats = document.querySelectorAll('.stat-number');
@@ -116,7 +111,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const target = parseInt(match[1]);
         const prefix = text.substring(0, text.indexOf(match[1]));
         const suffix = text.substring(text.indexOf(match[1]) + match[1].length);
+        const isCountDown = stat.hasAttribute('data-count-down');
         let current = 0;
+        let startVal = 0;
+        if (isCountDown) {
+          startVal = new Date().getFullYear(); // e.g. 2026
+        }
         const duration = 6000;
         const start = performance.now();
 
@@ -124,7 +124,11 @@ document.addEventListener('DOMContentLoaded', () => {
           const elapsed = now - start;
           const progress = Math.min(elapsed / duration, 1);
           const eased = 1 - Math.pow(1 - progress, 3);
-          current = Math.round(target * eased);
+          if (isCountDown) {
+            current = Math.round(startVal - (startVal - target) * eased);
+          } else {
+            current = Math.round(target * eased);
+          }
           stat.textContent = prefix + current + suffix;
           if (progress < 1) requestAnimationFrame(update);
         }

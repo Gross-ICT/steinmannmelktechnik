@@ -1028,7 +1028,7 @@ ul { list-style: none; }
 
 @media (max-width: 768px) {
   .navbar { padding: 4px 0; }
-  .logo-img { width: 55px; height: 55px; }
+  .logo-img { width: 75px; height: 75px; }
   .nav-toggle { display: flex; }
 
   .nav-menu {
