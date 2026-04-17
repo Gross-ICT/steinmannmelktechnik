@@ -235,7 +235,7 @@
   </div>
   <script>
     (function(){
-      if(sessionStorage.getItem("bannerClosed")) return;
+      if(sessionStorage.getItem("bannerClosed_v2")) return;
       var banner = document.getElementById("seasonalBanner");
       var navbar = document.getElementById("navbar");
       if(!banner) return;
@@ -247,11 +247,15 @@
           navbar.style.transition = "top 0.4s ease";
           navbar.style.top = bannerHeight + "px";
         }
+        document.body.style.transition = "padding-top 0.4s ease";
+        document.body.style.paddingTop = bannerHeight + "px";
       }, 500);
 
       window.addEventListener("resize", function() {
-        if (banner.classList.contains("visible") && navbar) {
-          navbar.style.top = banner.offsetHeight + "px";
+        if (banner.classList.contains("visible")) {
+          var h = banner.offsetHeight;
+          if (navbar) navbar.style.top = h + "px";
+          document.body.style.paddingTop = h + "px";
         }
       });
 
@@ -260,7 +264,8 @@
         if (navbar) {
           navbar.style.top = "0px";
         }
-        sessionStorage.setItem("bannerClosed", "true");
+        document.body.style.paddingTop = "0px";
+        sessionStorage.setItem("bannerClosed_v2", "true");
       });
     })();
   </script>
