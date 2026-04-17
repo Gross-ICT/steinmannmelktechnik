@@ -30,6 +30,7 @@
         <li><a href="ueber-uns.html" class="nav-link">Über uns</a></li>
         <li><a href="dienstleistungen.html" class="nav-link">Dienstleistungen</a></li>
         <li><a href="produkte.html" class="nav-link">Produkte</a></li>
+        <li><a href="projekte.html" class="nav-link">Projekte</a></li>
         <li><a href="referenzen.html" class="nav-link">Referenzen</a></li>
         <li><a href="galerie.html" class="nav-link">Galerie</a></li>
         <li><a href="partner.html" class="nav-link">Partner</a></li>
@@ -181,6 +182,7 @@
             <li><a href="ueber-uns.html">Über uns</a></li>
             <li><a href="dienstleistungen.html">Dienstleistungen</a></li>
             <li><a href="produkte.html">Produkte</a></li>
+            <li><a href="projekte.html">Projekte</a></li>
             <li><a href="referenzen.html">Referenzen</a></li>
             <li><a href="galerie.html">Galerie</a></li>
             <li><a href="partner.html">Partner</a></li>
@@ -220,6 +222,49 @@
 
   <script src="js/hero-animation.js"></script>
   <script src="js/main.js"></script>
+  <!-- Seasonal Banner -->
+  <div class="seasonal-banner" id="seasonalBanner">
+    <div class="seasonal-banner-content">
+      <div class="banner-icon"><i class="ph ph-wind"></i></div>
+      <h4>Saisonale Produkte im Fokus: Ventilatoren für ein optimales Stallklima!</h4>
+      <a href="produkte.html" class="btn-sm-banner">Zu den Produkten <i class="ph ph-arrow-right"></i></a>
+    </div>
+    <button class="banner-close-top" id="bannerClose" aria-label="Schliessen">
+      <i class="ph ph-x"></i>
+    </button>
+  </div>
+  <script>
+    (function(){
+      if(sessionStorage.getItem("bannerClosed")) return;
+      var banner = document.getElementById("seasonalBanner");
+      var navbar = document.getElementById("navbar");
+      if(!banner) return;
+      
+      setTimeout(function() {
+        banner.classList.add("visible");
+        var bannerHeight = banner.offsetHeight;
+        if (navbar) {
+          navbar.style.transition = "top 0.4s ease";
+          navbar.style.top = bannerHeight + "px";
+        }
+      }, 500);
+
+      window.addEventListener("resize", function() {
+        if (banner.classList.contains("visible") && navbar) {
+          navbar.style.top = banner.offsetHeight + "px";
+        }
+      });
+
+      document.getElementById("bannerClose").addEventListener("click", function() {
+        banner.classList.remove("visible");
+        if (navbar) {
+          navbar.style.top = "0px";
+        }
+        sessionStorage.setItem("bannerClosed", "true");
+      });
+    })();
+  </script>
+
   <!-- Cookie Banner -->
   <div class="cookie-banner" id="cookieBanner">
     <p>Diese Website verwendet Google Fonts. Dabei werden Daten an Google übermittelt. Mehr dazu in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
