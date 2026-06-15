@@ -85,9 +85,9 @@
         </div>
         <div class="contact-form-wrapper">
           <h2>Nachricht senden</h2>
-          <form class="contact-form" id="contactForm" action="https://formsubmit.co/steinmann.urs@bluewin.ch" method="POST">
-            <input type="hidden" name="_subject" value="Neue Anfrage via Website">
-            <input type="hidden" name="_next" value="kontakt.html">
+          <!-- Erfolgs-/Fehlermeldung -->
+          <div id="formMessage" style="display:none; padding:16px 20px; border-radius:12px; margin-bottom:20px; font-size:15px; font-weight:500; line-height:1.5; transition:all 0.4s ease;"></div>
+          <form class="contact-form" id="contactForm" action="send_mail.php" method="POST">
             <input type="text" name="_honey" style="display:none">
             <div class="form-group">
               <label for="name">Name *</label>
@@ -119,10 +119,65 @@
               <label for="message">Nachricht *</label>
               <textarea id="message" name="message" rows="5" required placeholder="Wie können wir Ihnen helfen?"></textarea>
             </div>
-            <button type="submit" class="btn btn-primary">
-              <i class="ph ph-paper-plane-tilt"></i> Nachricht senden
+            <button type="submit" class="btn btn-primary" id="submitBtn">
+              <i class="ph ph-paper-plane-tilt"></i> <span id="submitText">Nachricht senden</span>
             </button>
           </form>
+          <script>
+            (function() {
+              var form = document.getElementById('contactForm');
+              var msgBox = document.getElementById('formMessage');
+              var submitBtn = document.getElementById('submitBtn');
+              var submitText = document.getElementById('submitText');
+
+              form.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                // Loading-State
+                submitBtn.disabled = true;
+                submitBtn.style.opacity = '0.7';
+                submitBtn.style.cursor = 'wait';
+                submitText.textContent = 'Wird gesendet...';
+
+                var formData = new FormData(form);
+
+                fetch('send_mail.php', {
+                  method: 'POST',
+                  body: formData
+                })
+                .then(function(res) { return res.json(); })
+                .then(function(data) {
+                  msgBox.style.display = 'block';
+                  if (data.success) {
+                    msgBox.style.background = 'linear-gradient(135deg, rgba(82,183,136,0.12), rgba(45,106,79,0.08))';
+                    msgBox.style.border = '1px solid rgba(82,183,136,0.3)';
+                    msgBox.style.color = '#1b4332';
+                    msgBox.innerHTML = '<span style="font-size:18px; margin-right:8px;">✅</span>' + data.message;
+                    form.reset();
+                  } else {
+                    msgBox.style.background = 'linear-gradient(135deg, rgba(220,53,69,0.08), rgba(220,53,69,0.04))';
+                    msgBox.style.border = '1px solid rgba(220,53,69,0.25)';
+                    msgBox.style.color = '#8b1a2b';
+                    msgBox.innerHTML = '<span style="font-size:18px; margin-right:8px;">⚠️</span>' + data.message;
+                  }
+                  msgBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                })
+                .catch(function() {
+                  msgBox.style.display = 'block';
+                  msgBox.style.background = 'linear-gradient(135deg, rgba(220,53,69,0.08), rgba(220,53,69,0.04))';
+                  msgBox.style.border = '1px solid rgba(220,53,69,0.25)';
+                  msgBox.style.color = '#8b1a2b';
+                  msgBox.innerHTML = '<span style="font-size:18px; margin-right:8px;">⚠️</span>Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut oder kontaktieren Sie uns telefonisch.';
+                })
+                .finally(function() {
+                  submitBtn.disabled = false;
+                  submitBtn.style.opacity = '1';
+                  submitBtn.style.cursor = 'pointer';
+                  submitText.textContent = 'Nachricht senden';
+                });
+              });
+            })();
+          </script>
         </div>
         <div class="contact-map">
           <iframe
