@@ -26,41 +26,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // --- Projekt Daten ---
   var projekteStore = {
-    laufend1: {
-      titel: 'Neubau Milchviehstall Familie Roos',
-      ort: '<i class="ph ph-map-pin"></i> Romoos, LU',
-      beschreibung: 'Ein moderner Milchviehstall für 80 Kühe befindet sich in der Bauphase. Die Anlage wird nach den neuesten Tierwohl-Standards errichtet und soll künftig eine optimale Arbeitsumgebung bieten.',
-      umfang: 'Planung und Installation der kompletten Stalleinrichtung, inklusive Liegeboxen, automatischer Fütterungsanlage, Laufgangausstattung und Belüftungssystem.',
-      status: 'Montage der Stallelemente ist im Gange. Voraussichtliche Fertigstellung und Inbetriebnahme: Ende nächsten Monats.',
-      tags: ['Stalleinrichtung', 'Fütterung', 'Laufstall'],
-      galerie: ['img/referenzen/stalleinrichtung.png', 'img/referenzen/gallery_2.png', 'img/referenzen/gallery_3.png']
-    },
-    laufend2: {
-      titel: 'Erweiterung Melkanlage Hof Gerber',
-      ort: '<i class="ph ph-map-pin"></i> Schüpfheim, LU',
-      beschreibung: 'Der Hof Gerber vergrössert seinen Tierbestand und benötigt eine entsprechende Aufstockung der Melkplätze. Die bestehende Anlage wird während des laufenden Betriebs nahtlos modifiziert.',
-      umfang: 'Erweiterung der aktuellen GEA Melkanlage um vier weitere Plätze. Einbau einer stärkeren Vakuumpumpe und neuer elektronischer Pulsatoren zur schonenden Melkung.',
-      status: 'Planung und Materialbestellung abgeschlossen. Die Modifikationen vor Ort beginnen nächste Woche.',
-      tags: ['Melktechnik', 'Planung', 'GEA'],
-      galerie: ['img/referenzen/melkanlage.png', 'img/referenzen/gallery_1.png']
-    },
-    laufend3: {
-      titel: 'Kühlsystem Modernisierung Zemp',
-      ort: '<i class="ph ph-map-pin"></i> Entlebuch, LU',
-      beschreibung: 'Das bestehende Kühlsystem des landwirtschaftlichen Betriebs entsprach nicht mehr den energetischen Anforderungen. Ein Austausch gegen ein hocheffizientes System steht an.',
-      umfang: 'Demontage des alten Tanks und Installation eines neuen Buri AG Direktkühlers inklusive eines intelligenten Wärmerückgewinnungssystems für die Heisswassergewinnung.',
-      status: 'Aktuell in der Installationsphase. Die Wärmerückgewinnung wird derzeit mit dem Warmwassernetz gekoppelt.',
-      tags: ['Kühltechnik', 'Montage', 'Energieeffizienz'],
-      galerie: ['img/referenzen/kuehltank.png', 'img/referenzen/gallery_5.png']
-    },
-    laufend4: {
-      titel: 'Umbau Laufstall Familie Bieri',
-      ort: '<i class="ph ph-map-pin"></i> Flühli, LU',
-      beschreibung: 'Ein älterer Anbindestall wird Zug um Zug in einen offenen, tierfreundlichen Laufstall umgebaut, um den Arbeitsaufwand massiv zu reduzieren.',
-      umfang: 'Einbau einer neuen Schieberentmistung, Erneuerung der Spaltenböden und Anpassung der Fressgitterbereiche.',
-      status: 'Die Betonarbeiten der Böden sind abgeschlossen, aktuell läuft die Befestigung und Justierung der Schieberentmistung.',
-      tags: ['Stalleinrichtung', 'Umbau', 'Entmistung'],
-      galerie: ['img/referenzen/laufstall.png', 'img/referenzen/gallery_4.png', 'img/referenzen/gallery_6.png']
+    laufend_glauser: {
+      titel: 'Neubau Milchviehstall Glauser',
+      ort: '<i class="ph ph-map-pin"></i> Fischbach, LU',
+      beschreibung: 'Bei der Familie Glauser in Fischbach entsteht derzeit ein moderner Neubau eines Milchviehstalls, bei dem der Fokus auf Tierwohl und optimale Arbeitsabläufe gelegt wird.',
+      umfang: 'Lieferung Betonrost, Lieferung und Montage Stalleinrichtung wurde fertiggestellt. Es folgt noch Lieferung und Montage von Rolltor und Klimawände.',
+      status: 'Im Bau. Stalleinrichtung und Betonrost sind abgeschlossen. Demnächst erfolgt der Einbau von Rolltor und Klimawänden.',
+      tags: ['Stalleinrichtung', 'Neubau', 'Im Bau'],
+      galerie: ['img/referenzen/glauser_neubau.jpg']
     },
     abgeschlossen1: {
       titel: 'Melkstand 2x4 Hof Meier',
