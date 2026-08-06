@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Blitz-Kategorisierung</title>
+    <style>
+        body { font-family: Arial, sans-serif; display: flex; height: 100vh; margin: 0; background: #222; color: #fff; }
+        .image-container { flex: 2; display: flex; align-items: center; justify-content: center; padding: 20px; }
+        .image-container img { max-width: 100%; max-height: 90vh; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.5); }
+        .controls { flex: 1; padding: 40px; background: #333; display: flex; flex-direction: column; justify-content: center; overflow-y: auto; }
+        h1 { margin-top: 0; font-size: 24px; }
+        .info { color: #aaa; margin-bottom: 20px; }
+        
+        .btn { display: block; width: 100%; padding: 12px; margin: 8px 0; font-size: 16px; font-weight: bold; background: transparent; color: white; border: 2px solid #555; border-radius: 5px; cursor: pointer; text-align: left; transition: 0.2s; }
+        .btn:hover { background: rgba(255,255,255,0.1); }
+        .btn.selected { border-width: 2px; }
+        
+        /* Focus colors for selected state */
+        .btn-melk.selected { background: #e74c3c; border-color: #c0392b; }
+        .btn-stall_ein.selected { background: #f39c12; border-color: #d68910; }
+        .btn-kuehl.selected { background: #3498db; border-color: #2980b9; }
+        .btn-fuetterung.selected { background: #2ecc71; border-color: #27ae60; }
+        .btn-stall.selected { background: #9b59b6; border-color: #8e44ad; }
+        .btn-anlaesse.selected { background: #e67e22; border-color: #d35400; }
+        .btn-diverses.selected { background: #1abc9c; border-color: #16a085; }
+        .btn.selected { border-width: 2px; background: #555; }
+        
+        .btn-submit { background: #00d2ff; color: #000; border: none; padding: 15px; margin-top: 25px; font-size: 18px; text-align: center; }
+        .btn-submit:hover { background: #00b8e6; transform: translateY(-2px); }
+        .btn-skip { background: #555; text-align: center; border: none; margin-top: 10px; }
+        
+        #counter { font-size: 40px; font-weight: bold; margin-bottom: 10px; color: #00d2ff;}
+        .shortcut { font-size: 12px; color: #888; margin-bottom: 2px; }
+    </style>
+</head>
+<body>
+    <div class="image-container">
+        <img id="currentImage" src="" alt="Lade Bilder...">
+    </div>
+    <div class="controls">
+        <div id="counter">0 / 0</div>
+        <h1>Ordne dieses Foto zu:</h1>
+        <div class="shortcut">1. Anlässe (1)</div>
+        <div class="shortcut">2. Aufstallungssysteme (2)</div>
+        <div class="shortcut">3. Belüftung (3)</div>
+        <div class="shortcut">4. Diverses (4)</div>
+        <div class="shortcut">5. Fütterung (5)</div>
+        <div class="shortcut">6. Kühltechnik (6)</div>
+        <div class="shortcut">7. Melktechnik (7)</div>
+        <div class="shortcut">8. Stall (8)</div>
+        <div class="shortcut" style="color:red">Überspringen (S)</div>
+        <p class="info">Klicke Kategorien an, um sie auszuwählen (Mehrfachauswahl möglich). Drücke dann Enter oder auf "Speichern".</p>
+        
+        <button class="btn" id="btn_anlaesse" onclick="toggle('anlaesse')">1. Anlässe</button>
+        <button class="btn" id="btn_aufstallung" onclick="toggle('aufstallung')">2. Aufstallungssysteme</button>
+        <button class="btn" id="btn_belueftung" onclick="toggle('belueftung')">3. Belüftung</button>
+        <button class="btn" id="btn_diverses" onclick="toggle('diverses')">4. Diverses</button>
+        <button class="btn" id="btn_fuetterung" onclick="toggle('fuetterung')">5. Fütterung</button>
+        <button class="btn" id="btn_kuehltechnik" onclick="toggle('kuehltechnik')">6. Kühltechnik</button>
+        <button class="btn" id="btn_melktechnik" onclick="toggle('melktechnik')">7. Melktechnik</button>
+        <button class="btn" id="btn_stall" onclick="toggle('stall')">8. Stall</button>
+
+        <button class="btn btn-submit" onclick="submitCategories()">Speichern & Weiter (Enter)</button>
+        <button class="btn btn-skip" onclick="skip()">Überspringen (S)</button>
+    </div>
+
+    <script>
+        let images = [];
+        let currentIndex = 0;
+        let selectedCategories = new Set();
+
+        async function fetchImages() {
+            const res = await fetch('/api/images');
+            images = await res.json();
+            updateUI();
+        }
+
+        function updateUI() {
+            selectedCategories.clear();
+            document.querySelectorAll('.btn').forEach(b => b.classList.remove('selected'));
+
+            const remaining = images.length - currentIndex;
+            document.getElementById('counter').innerText = `Noch ${remaining} Fotos (von ${images.length}) zum Zuordnen`;
+            
+            if (currentIndex >= images.length) {
+                document.getElementById('currentImage').style.display = 'none';
+                document.querySelector('.controls').innerHTML = '<h1>Fertig!</h1><p>Alle Bilder wurden verarbeitet! Du kannst diesen Tab jetzt schließen.</p>';
+                return;
+            }
+            document.getElementById('currentImage').src = `/images/${images[currentIndex]}`;
+        }
+
+        function toggle(cat) {
+            const btn = document.getElementById('btn_' + cat);
+            if (selectedCategories.has(cat)) {
+                selectedCategories.delete(cat);
+                btn.classList.remove('selected');
+            } else {
+                selectedCategories.add(cat);
+                btn.classList.add('selected');
+            }
+        }
+
+        async function submitCategories() {
+            if (currentIndex >= images.length) return;
+            if (selectedCategories.size === 0) {
+                alert("Bitte wähle mindestens eine Kategorie aus oder nutze 'Überspringen'.");
+                return;
+            }
+            
+            const file = images[currentIndex];
+            const categoriesToSave = Array.from(selectedCategories);
+            
+            currentIndex++;
+            updateUI();
+
+            await fetch('/api/categorize', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ file, categories: categoriesToSave })
+            });
+        }
+
+        function skip() {
+            currentIndex++;
+            updateUI();
+        }
+
+        document.addEventListener('keydown', (e) => {
+            const keyMap = {
+                '1': 'anlaesse',
+                '2': 'aufstallung',
+                '3': 'belueftung',
+                '4': 'diverses',
+                '5': 'fuetterung',
+                '6': 'kuehltechnik',
+                '7': 'melktechnik',
+                '8': 'stall',
+            };
+            
+            if (keyMap[e.key]) toggle(keyMap[e.key]);
+            
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                submitCategories();
+            }
+            if (e.key.toLowerCase() === 's' && e.target.nodeName !== 'INPUT') skip();
+        });
+
+        fetchImages();
+    </script>
+</body>
+</html>

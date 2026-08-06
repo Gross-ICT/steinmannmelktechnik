@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Steinmann Melktechnik GmbH – Ihr Partner für Melkanlagen, Stalleinrichtungen und Hoftechnik in Hüswil, Luzern. Verkauf, Montage, Service und Reparatur.">
+  <title>Steinmann Melktechnik GmbH – Hof- und Stalltechnik aus Hüswil</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.0.3/src/regular/style.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="nav-logo">
+        <img src="img/logo.png" alt="Steinmann Melktechnik Logo" class="logo-img">
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Navigation umschalten">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html" class="nav-link active">Home</a></li>
+        <li><a href="ueber-uns.html" class="nav-link">Über uns</a></li>
+        <li><a href="dienstleistungen.html" class="nav-link">Dienstleistungen</a></li>
+        <li><a href="produkte.html" class="nav-link">Produkte</a></li>
+        <li><a href="projekte.html" class="nav-link">Projekte</a></li>
+        <li><a href="referenzen.html" class="nav-link">Referenzen</a></li>
+        <li><a href="galerie.html" class="nav-link">Galerie</a></li>
+        <li><a href="partner.html" class="nav-link">Partner</a></li>
+        <li><a href="kontakt.html" class="nav-link nav-cta">Kontakt</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section with Video (plays once, max 5s) -->
+  <section class="hero" id="home">
+    <div class="hero-video-wrapper">
+      <video id="heroVideo" class="hero-video" autoplay muted playsinline preload="auto" webkit-playsinline>
+        <source src="video/hero_neu.mp4" type="video/mp4">
+      </video>
+      <canvas id="heroCanvas" class="hero-canvas"></canvas>
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="container hero-content">
+      <h1>Ihr Fachpartner für <span class="text-accent">Melktechnik</span> & Stalleinrichtungen</h1>
+      <p class="hero-desc">Verkauf, Montage, Service und Reparatur von Melkanlagen und Hofzubehör – kompetent, zuverlässig und persönlich.</p>
+      <div class="hero-actions">
+        <a href="kontakt.html" class="btn btn-primary">
+          <i class="ph ph-phone"></i> Kontakt aufnehmen
+        </a>
+        <a href="dienstleistungen.html" class="btn btn-outline">
+          Unsere Leistungen <i class="ph ph-arrow-right"></i>
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-number" data-count-down="true">seit 2015</span>
+          <span class="stat-label">Im Einsatz für Sie</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-number">5+</span>
+          <span class="stat-label">Starke Partner</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-number">100%</span>
+          <span class="stat-label">Schweizer Qualität</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Intro Teaser Section -->
+  <section class="section intro-teaser">
+    <div class="container">
+      <div class="teaser-grid">
+        <div class="teaser-card">
+          <div class="teaser-icon"><i class="ph ph-wrench"></i></div>
+          <h3>Montage & Installation</h3>
+          <p>Professionelle Montage von Melkanlagen, Stalleinrichtungen und Kühltechnik – alles aus einer Hand.</p>
+          <a href="dienstleistungen.html" class="teaser-link">Mehr erfahren <i class="ph ph-arrow-right"></i></a>
+        </div>
+        <div class="teaser-card">
+          <div class="teaser-icon"><i class="ph ph-gear"></i></div>
+          <h3>Service & Reparatur</h3>
+          <p>Schnelle Hilfe bei Störungen und regelmässige Wartung. Wir halten Ihre Technik zuverlässig am Laufen.</p>
+          <a href="dienstleistungen.html" class="teaser-link">Mehr erfahren <i class="ph ph-arrow-right"></i></a>
+        </div>
+        <div class="teaser-card">
+          <div class="teaser-icon"><i class="ph ph-handshake"></i></div>
+          <h3>Starke Partner</h3>
+          <p>Zusammenarbeit mit führenden Herstellern wie GEA, Buri AG, Hallenplan GmbH und weiteren Marken.</p>
+          <a href="partner.html" class="teaser-link">Unsere Partner <i class="ph ph-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Teaser -->
+  <section class="section about-teaser">
+    <div class="container">
+      <div class="about-teaser-grid">
+        <div class="about-teaser-content">
+          <span class="section-tag">Über uns</span>
+          <h2>Kompetenz trifft <span class="text-accent">Leidenschaft</span></h2>
+          <p>Steinmann Melktechnik GmbH ist Ihr inhabergeführter Fachbetrieb für Hof- und Stalltechnik in Hüswil, Kanton Luzern. Seit 2015 betreut Urs Steinmann Landwirtschaftsbetriebe in der ganzen Region – persönlich, kompetent und zuverlässig.</p>
+          <p>Ob Neuinstallation, Umbau oder Reparatur – wir begleiten Sie von der Beratung bis zur Inbetriebnahme und darüber hinaus.</p>
+          <a href="ueber-uns.html" class="btn btn-primary-dark">
+            Mehr über uns <i class="ph ph-arrow-right"></i>
+          </a>
+        </div>
+        <div class="about-teaser-highlights">
+          <div class="highlight">
+            <div class="highlight-icon"><i class="ph ph-user-circle"></i></div>
+            <div>
+              <h4>Persönliche Beratung</h4>
+              <p>Individuelle Lösungen für jeden Hof</p>
+            </div>
+          </div>
+          <div class="highlight">
+            <div class="highlight-icon"><i class="ph ph-clock-clockwise"></i></div>
+            <div>
+              <h4>Schnelle Reaktion</h4>
+              <p>Zuverlässiger Notfall-Service</p>
+            </div>
+          </div>
+          <div class="highlight">
+            <div class="highlight-icon"><i class="ph ph-certificate"></i></div>
+            <div>
+              <h4>Qualitätsprodukte</h4>
+              <p>Nur bewährte Marken und Technik</p>
+            </div>
+          </div>
+          <div class="highlight">
+            <div class="highlight-icon"><i class="ph ph-map-pin"></i></div>
+            <div>
+              <h4>Regional verwurzelt</h4>
+              <p>Aus Hüswil für die Region Luzern</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="cta-banner">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Projekt geplant? Wir beraten Sie gerne.</h2>
+        <p>Ob Neuanlage, Umbau oder Reparatur – rufen Sie uns an oder schreiben Sie uns.</p>
+        <div class="cta-actions">
+          <a href="tel:+41796412453" class="btn btn-primary"><i class="ph ph-phone"></i> 079 641 24 53</a>
+          <a href="kontakt.html" class="btn btn-outline-dark">Zum Kontaktformular <i class="ph ph-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo footer-logo">
+            <img src="img/logo.png" alt="Steinmann Melktechnik Logo" class="logo-img">
+          </a>
+          <p>Ihr Fachpartner für Melktechnik, Stalleinrichtungen und Hoftechnik in Hüswil, Luzern.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="ueber-uns.html">Über uns</a></li>
+            <li><a href="dienstleistungen.html">Dienstleistungen</a></li>
+            <li><a href="produkte.html">Produkte</a></li>
+            <li><a href="projekte.html">Projekte</a></li>
+            <li><a href="referenzen.html">Referenzen</a></li>
+            <li><a href="galerie.html">Galerie</a></li>
+            <li><a href="partner.html">Partner</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Leistungen</h4>
+          <ul>
+            <li><a href="dienstleistungen.html">Melktechnik</a></li>
+            <li><a href="dienstleistungen.html">Kühltechnik</a></li>
+            <li><a href="dienstleistungen.html">Stalleinrichtungen</a></li>
+            <li><a href="dienstleistungen.html">Fütterungstechnik</a></li>
+            <li><a href="dienstleistungen.html">Service & Reparatur</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Kontakt</h4>
+          <p><a href="https://www.google.com/maps/search/?api=1&query=Bernstrasse+7a,+6152+Hüswil,+Schweiz" target="_blank" rel="noopener"><i class="ph ph-map-pin"></i> Bernstrasse 7a, 6152 Hüswil</a></p>
+          <p><i class="ph ph-phone"></i> <a href="tel:+41796412453">079 641 24 53</a></p>
+          <p><i class="ph ph-envelope"></i> <a href="mailto:steinmann.urs@bluewin.ch">steinmann.urs@bluewin.ch</a></p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Steinmann Melktechnik GmbH. Alle Rechte vorbehalten.</p>
+        <div class="footer-legal">
+          <a href="impressum.html">Impressum</a>
+          <a href="datenschutz.html">Datenschutz</a>
+        </div>
+        <div class="footer-created-by">
+          <span>Diese Webseite wurde erstellt von</span>
+          <a href="https://gross-ict.ch" target="_blank" rel="noopener"><img src="img/gross-ict_logo.png" alt="Gross ICT" class="created-by-logo"></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/hero-animation.js"></script>
+  <script src="js/main.js"></script>
+  <!-- Seasonal Banner -->
+  <div class="seasonal-banner" id="seasonalBanner">
+    <div class="seasonal-banner-content">
+      <div class="banner-icon"><i class="ph ph-wind"></i></div>
+      <h4>Saisonale Produkte im Fokus: Ventilatoren für ein optimales Stallklima!</h4>
+      <a href="produkte.html" class="btn-sm-banner">Zu den Produkten <i class="ph ph-arrow-right"></i></a>
+    </div>
+    <button class="banner-close-top" id="bannerClose" aria-label="Schliessen">
+      <i class="ph ph-x"></i>
+    </button>
+  </div>
+  <script>
+    (function(){
+      if(sessionStorage.getItem("bannerClosed_v2")) return;
+      var banner = document.getElementById("seasonalBanner");
+      var navbar = document.getElementById("navbar");
+      if(!banner) return;
+      
+      setTimeout(function() {
+        banner.classList.add("visible");
+        var bannerHeight = banner.offsetHeight;
+        if (navbar) {
+          navbar.style.transition = "top 0.4s ease";
+          navbar.style.top = bannerHeight + "px";
+        }
+        document.body.style.transition = "padding-top 0.4s ease";
+        document.body.style.paddingTop = bannerHeight + "px";
+      }, 500);
+
+      window.addEventListener("resize", function() {
+        if (banner.classList.contains("visible")) {
+          var h = banner.offsetHeight;
+          if (navbar) navbar.style.top = h + "px";
+          document.body.style.paddingTop = h + "px";
+        }
+      });
+
+      document.getElementById("bannerClose").addEventListener("click", function() {
+        banner.classList.remove("visible");
+        if (navbar) {
+          navbar.style.top = "0px";
+        }
+        document.body.style.paddingTop = "0px";
+        sessionStorage.setItem("bannerClosed_v2", "true");
+      });
+    })();
+  </script>
+
+  <!-- Cookie Banner -->
+  <div class="cookie-banner" id="cookieBanner">
+    <p>Diese Website verwendet Google Fonts. Dabei werden Daten an Google übermittelt. Mehr dazu in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
+    <div class="cookie-banner-actions">
+      <button class="btn-cookie btn-cookie-accept" id="cookieAccept">Verstanden</button>
+      <button class="btn-cookie btn-cookie-decline" id="cookieDecline">Ablehnen</button>
+    </div>
+  </div>
+  <script>
+    (function(){
+      if(localStorage.getItem("cookieConsent"))return;
+      var b=document.getElementById("cookieBanner");
+      if(!b)return;
+      setTimeout(function(){b.classList.add("visible");},800);
+      document.getElementById("cookieAccept").addEventListener("click",function(){
+        localStorage.setItem("cookieConsent","accepted");b.classList.remove("visible");
+      });
+      document.getElementById("cookieDecline").addEventListener("click",function(){
+        localStorage.setItem("cookieConsent","declined");b.classList.remove("visible");
+      });
+    })();
+  </script>
+</body>
+</html>

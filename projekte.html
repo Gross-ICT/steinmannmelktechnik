@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Projekte der Steinmann Melktechnik GmbH – Laufende und abgeschlossene Projekte in der Übersicht.">
+  <title>Projekte – Steinmann Melktechnik GmbH</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.0.3/src/regular/style.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-inner" id="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="nav-logo">
+        <img src="img/logo.png" alt="Steinmann Melktechnik Logo" class="logo-img">
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Navigation umschalten">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="ueber-uns.html" class="nav-link">Über uns</a></li>
+        <li><a href="dienstleistungen.html" class="nav-link">Dienstleistungen</a></li>
+        <li><a href="produkte.html" class="nav-link">Produkte</a></li>
+        <li><a href="projekte.html" class="nav-link active">Projekte</a></li>
+        <li><a href="referenzen.html" class="nav-link">Referenzen</a></li>
+        <li><a href="galerie.html" class="nav-link">Galerie</a></li>
+        <li><a href="partner.html" class="nav-link">Partner</a></li>
+        <li><a href="kontakt.html" class="nav-link nav-cta">Kontakt</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <span class="section-tag">Projekte</span>
+      <h1>Unsere <span class="text-accent">Projekte</span></h1>
+      <p>Entdecken Sie unsere aktuellen Installationen und erfolgreich abgeschlossenen Hofumbauten.</p>
+    </div>
+  </section>
+
+  <!-- Projekte Section -->
+  <section class="section">
+    <div class="container">
+      <div class="projekte-tabs">
+        <button class="tab-btn active" data-tab="laufend">Laufende Projekte</button>
+        <button class="tab-btn" data-tab="abgeschlossen">Abgeschlossene Projekte</button>
+      </div>
+
+      <!-- Content Laufend -->
+      <div class="tab-content active" id="tab-laufend">
+        <div class="referenzen-grid">
+          <div class="referenz-card projekt-card" data-projekt="laufend_glauser">
+            <div class="referenz-img"><div class="projekt-badge">Im Bau</div><img src="img/referenzen/glauser_neubau.jpg" alt="Neubau Milchviehstall Glauser" loading="lazy"></div>
+            <div class="referenz-content">
+              <h3>Neubau Milchviehstall Glauser</h3>
+              <span class="referenz-ort"><i class="ph ph-map-pin"></i> Fischbach, LU</span>
+              <p>Lieferung Betonrost, Lieferung und Montage Stalleinrichtung wurde fertiggestellt. Es folgt noch Lieferung und Montage von Rolltor und Klimawände.</p>
+              <div class="referenz-tags"><span>Stalleinrichtung</span><span>Neubau</span></div>
+              <span class="referenz-mehr">Details ansehen <i class="ph ph-arrow-right"></i></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Content Abgeschlossen -->
+      <div class="tab-content" id="tab-abgeschlossen" style="display: none;">
+        <div style="min-height: 30vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 40px 20px; background: var(--clr-card); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); border: 1px solid var(--clr-border);">
+          <div style="font-size: 3rem; color: var(--clr-primary); margin-bottom: 1rem;"><i class="ph ph-images"></i></div>
+          <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Projekte in <span class="text-accent">Vorbereitung</span></h3>
+          <p style="max-width: 600px; color: var(--clr-text-light);">Wir stellen derzeit eine Auswahl unserer erfolgreich abgeschlossenen Projekte für Sie zusammen. In Kürze finden Sie hier detaillierte Einblicke in unsere Arbeit.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="cta-banner">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Werden Sie unser nächster zufriedener Kunde</h2>
+        <p>Kontaktieren Sie uns für eine unverbindliche Beratung – wir freuen uns auf Ihr Projekt.</p>
+        <div class="cta-actions">
+          <a href="tel:+41796412453" class="btn btn-primary"><i class="ph ph-phone"></i> 079 641 24 53</a>
+          <a href="kontakt.html" class="btn btn-outline-dark">Zum Kontaktformular <i class="ph ph-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo footer-logo">
+            <img src="img/logo.png" alt="Steinmann Melktechnik Logo" class="logo-img">
+          </a>
+          <p>Ihr Fachpartner für Melktechnik, Stalleinrichtungen und Hoftechnik in Hüswil, Luzern.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="ueber-uns.html">Über uns</a></li>
+            <li><a href="dienstleistungen.html">Dienstleistungen</a></li>
+            <li><a href="produkte.html">Produkte</a></li>
+            <li><a href="projekte.html">Projekte</a></li>
+            <li><a href="referenzen.html">Referenzen</a></li>
+            <li><a href="galerie.html">Galerie</a></li>
+            <li><a href="partner.html">Partner</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Leistungen</h4>
+          <ul>
+            <li><a href="dienstleistungen.html">Melktechnik</a></li>
+            <li><a href="dienstleistungen.html">Kühltechnik</a></li>
+            <li><a href="dienstleistungen.html">Stalleinrichtungen</a></li>
+            <li><a href="dienstleistungen.html">Fütterungstechnik</a></li>
+            <li><a href="dienstleistungen.html">Service & Reparatur</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Kontakt</h4>
+          <p><a href="https://www.google.com/maps/search/?api=1&query=Bernstrasse+7a,+6152+Hüswil,+Schweiz" target="_blank" rel="noopener"><i class="ph ph-map-pin"></i> Bernstrasse 7a, 6152 Hüswil</a></p>
+          <p><i class="ph ph-phone"></i> <a href="tel:+41796412453">079 641 24 53</a></p>
+          <p><i class="ph ph-envelope"></i> <a href="mailto:steinmann.urs@bluewin.ch">steinmann.urs@bluewin.ch</a></p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Steinmann Melktechnik GmbH. Alle Rechte vorbehalten.</p>
+        <div class="footer-legal">
+          <a href="impressum.html">Impressum</a>
+          <a href="datenschutz.html">Datenschutz</a>
+        </div>
+        <div class="footer-created-by">
+          <span>Diese Webseite wurde erstellt von</span>
+          <a href="https://gross-ict.ch" target="_blank" rel="noopener"><img src="img/gross-ict_logo.png" alt="Gross ICT" class="created-by-logo"></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Projekt Modal -->
+  <div class="referenz-modal-overlay" id="projektModal">
+    <div class="referenz-modal">
+      <button class="referenz-modal-close" id="projektClose"><i class="ph ph-x"></i></button>
+      <div class="referenz-modal-header">
+        <div class="referenz-modal-icon"><i class="ph ph-buildings"></i></div>
+        <div>
+          <h2 id="modalProjektTitel"></h2>
+          <span class="referenz-ort" id="modalProjektOrt"></span>
+        </div>
+      </div>
+      <div class="referenz-modal-body">
+        <div class="referenz-story-section">
+          <h4><i class="ph ph-info"></i> Projektbeschreibung</h4>
+          <p id="modalProjektBeschreibung"></p>
+        </div>
+        <div class="referenz-story-section">
+          <h4><i class="ph ph-list-checks"></i> Projektumfang</h4>
+          <p id="modalProjektUmfang"></p>
+        </div>
+        <div class="referenz-story-section">
+          <h4><i class="ph ph-clock"></i> Status / Zeithorizont</h4>
+          <p id="modalProjektStatus"></p>
+        </div>
+        <div class="referenz-story-section">
+          <h4><i class="ph ph-tag"></i> Kategorien</h4>
+          <div class="referenz-tags" id="modalProjektTags"></div>
+        </div>
+        <div class="referenz-story-section" id="modalProjektGalerieSection" style="display: none;">
+          <h4><i class="ph ph-images"></i> Projektgalerie</h4>
+          <div class="referenz-galerie" id="modalProjektGalerie"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Lightbox Overlay -->
+  <div class="lightbox-overlay" id="lightboxOverlay">
+    <div class="lightbox-content">
+      <button class="lightbox-close" id="lightboxClose"><i class="ph ph-x"></i></button>
+      <button class="lightbox-nav lightbox-prev" id="lightboxPrev"><i class="ph ph-caret-left"></i></button>
+      <button class="lightbox-nav lightbox-next" id="lightboxNext"><i class="ph ph-caret-right"></i></button>
+      <img src="" alt="Fullscreen Project Image" class="lightbox-img" id="lightboxImg">
+      <div class="lightbox-counter" id="lightboxCounter"></div>
+    </div>
+  </div>
+
+  <script src="js/projekte.js"></script>
+  <script src="js/main.js"></script>
+  <!-- Cookie Banner -->
+  <div class="cookie-banner" id="cookieBanner">
+    <p>Diese Website verwendet Google Fonts. Dabei werden Daten an Google übermittelt. Mehr dazu in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
+    <div class="cookie-banner-actions">
+      <button class="btn-cookie btn-cookie-accept" id="cookieAccept">Verstanden</button>
+      <button class="btn-cookie btn-cookie-decline" id="cookieDecline">Ablehnen</button>
+    </div>
+  </div>
+  <script>
+    (function(){
+      if(localStorage.getItem("cookieConsent"))return;
+      var b=document.getElementById("cookieBanner");
+      if(!b)return;
+      setTimeout(function(){b.classList.add("visible");},800);
+      document.getElementById("cookieAccept").addEventListener("click",function(){
+        localStorage.setItem("cookieConsent","accepted");b.classList.remove("visible");
+      });
+      document.getElementById("cookieDecline").addEventListener("click",function(){
+        localStorage.setItem("cookieConsent","declined");b.classList.remove("visible");
+      });
+    })();
+  </script>
+</body>
+</html>

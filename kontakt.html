@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kontaktieren Sie Steinmann Melktechnik GmbH – Bernstrasse 7a, 6152 Hüswil LU. Telefon: 079 641 24 53.">
+  <title>Kontakt – Steinmann Melktechnik GmbH</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.0.3/src/regular/style.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-inner" id="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="nav-logo">
+        <img src="img/logo.png" alt="Steinmann Melktechnik Logo" class="logo-img">
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Navigation umschalten">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="ueber-uns.html" class="nav-link">Über uns</a></li>
+        <li><a href="dienstleistungen.html" class="nav-link">Dienstleistungen</a></li>
+        <li><a href="produkte.html" class="nav-link">Produkte</a></li>
+        <li><a href="projekte.html" class="nav-link">Projekte</a></li>
+        <li><a href="referenzen.html" class="nav-link">Referenzen</a></li>
+        <li><a href="galerie.html" class="nav-link">Galerie</a></li>
+        <li><a href="partner.html" class="nav-link">Partner</a></li>
+        <li><a href="kontakt.html" class="nav-link nav-cta active">Kontakt</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <span class="section-tag">Kontakt</span>
+      <h1>Wir sind <span class="text-accent">für Sie da</span></h1>
+      <p>Haben Sie Fragen oder möchten Sie ein unverbindliches Angebot? Kontaktieren Sie uns – wir beraten Sie gerne.</p>
+    </div>
+  </section>
+
+  <!-- Contact Content -->
+  <section class="section">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <a href="https://www.google.com/maps/search/?api=1&query=Bernstrasse+7a,+6152+Hüswil,+Schweiz" target="_blank" rel="noopener" class="contact-card" style="text-decoration:none;color:inherit;cursor:pointer;">
+            <div class="contact-icon"><i class="ph ph-map-pin"></i></div>
+            <div>
+              <h3>Adresse</h3>
+              <p>Steinmann Melktechnik GmbH<br>Bernstrasse 7a<br>6152 Hüswil LU</p>
+            </div>
+          </a>
+          <a href="tel:+41796412453" class="contact-card" style="text-decoration:none;color:inherit;cursor:pointer;">
+            <div class="contact-icon"><i class="ph ph-phone"></i></div>
+            <div>
+              <h3>Telefon</h3>
+              <p>079 641 24 53</p>
+              <p class="contact-note">Auch für Notfälle erreichbar</p>
+            </div>
+          </a>
+          <a href="mailto:steinmann.urs@bluewin.ch" class="contact-card" style="text-decoration:none;color:inherit;cursor:pointer;">
+            <div class="contact-icon"><i class="ph ph-envelope"></i></div>
+            <div>
+              <h3>E-Mail</h3>
+              <p>steinmann.urs@bluewin.ch</p>
+            </div>
+          </a>
+          <div class="contact-card">
+            <div class="contact-icon"><i class="ph ph-user"></i></div>
+            <div>
+              <h3>Inhaber</h3>
+              <p>Urs Steinmann<br>Geschäftsführer</p>
+            </div>
+          </div>
+        </div>
+        <div class="contact-form-wrapper">
+          <h2>Nachricht senden</h2>
+          <!-- Erfolgs-/Fehlermeldung -->
+          <div id="formMessage" style="display:none; padding:16px 20px; border-radius:12px; margin-bottom:20px; font-size:15px; font-weight:500; line-height:1.5; transition:all 0.4s ease;"></div>
+          <form class="contact-form" id="contactForm" action="send_mail.php" method="POST">
+            <input type="text" name="_honey" style="display:none">
+            <div class="form-group">
+              <label for="name">Name *</label>
+              <input type="text" id="name" name="name" required placeholder="Ihr Name">
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">E-Mail *</label>
+                <input type="email" id="email" name="email" required placeholder="ihre@email.ch">
+              </div>
+              <div class="form-group">
+                <label for="phone">Telefon</label>
+                <input type="tel" id="phone" name="phone" placeholder="079 000 00 00">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="subject">Betreff</label>
+              <select id="subject" name="subject">
+                <option value="">Bitte wählen...</option>
+                <option value="Neuanlage">Neuanlage / Neubau</option>
+                <option value="Umbau">Umbau / Erweiterung</option>
+                <option value="Reparatur">Reparatur / Störung</option>
+                <option value="Service">Service / Wartung</option>
+                <option value="Beratung">Allgemeine Beratung</option>
+                <option value="Sonstiges">Sonstiges</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Nachricht *</label>
+              <textarea id="message" name="message" rows="5" required placeholder="Wie können wir Ihnen helfen?"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" id="submitBtn">
+              <i class="ph ph-paper-plane-tilt"></i> <span id="submitText">Nachricht senden</span>
+            </button>
+          </form>
+          <script>
+            (function() {
+              var form = document.getElementById('contactForm');
+              var msgBox = document.getElementById('formMessage');
+              var submitBtn = document.getElementById('submitBtn');
+              var submitText = document.getElementById('submitText');
+
+              form.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                // Loading-State
+                submitBtn.disabled = true;
+                submitBtn.style.opacity = '0.7';
+                submitBtn.style.cursor = 'wait';
+                submitText.textContent = 'Wird gesendet...';
+
+                var formData = new FormData(form);
+
+                fetch('send_mail.php', {
+                  method: 'POST',
+                  body: formData
+                })
+                .then(function(res) { return res.json(); })
+                .then(function(data) {
+                  msgBox.style.display = 'block';
+                  if (data.success) {
+                    msgBox.style.background = 'linear-gradient(135deg, rgba(82,183,136,0.12), rgba(45,106,79,0.08))';
+                    msgBox.style.border = '1px solid rgba(82,183,136,0.3)';
+                    msgBox.style.color = '#1b4332';
+                    msgBox.innerHTML = '<span style="font-size:18px; margin-right:8px;">✅</span>' + data.message;
+                    form.reset();
+                  } else {
+                    msgBox.style.background = 'linear-gradient(135deg, rgba(220,53,69,0.08), rgba(220,53,69,0.04))';
+                    msgBox.style.border = '1px solid rgba(220,53,69,0.25)';
+                    msgBox.style.color = '#8b1a2b';
+                    msgBox.innerHTML = '<span style="font-size:18px; margin-right:8px;">⚠️</span>' + data.message;
+                  }
+                  msgBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                })
+                .catch(function() {
+                  msgBox.style.display = 'block';
+                  msgBox.style.background = 'linear-gradient(135deg, rgba(220,53,69,0.08), rgba(220,53,69,0.04))';
+                  msgBox.style.border = '1px solid rgba(220,53,69,0.25)';
+                  msgBox.style.color = '#8b1a2b';
+                  msgBox.innerHTML = '<span style="font-size:18px; margin-right:8px;">⚠️</span>Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut oder kontaktieren Sie uns telefonisch.';
+                })
+                .finally(function() {
+                  submitBtn.disabled = false;
+                  submitBtn.style.opacity = '1';
+                  submitBtn.style.cursor = 'pointer';
+                  submitText.textContent = 'Nachricht senden';
+                });
+              });
+            })();
+          </script>
+        </div>
+        <div class="contact-map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2710.5!2d7.8844!3d47.1167!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478ffca8a8a8a8a9%3A0x0!2sBernstrasse%207a%2C%206152%20H%C3%BCswil!5e0!3m2!1sde!2sch!4v1"
+            width="100%"
+            height="100%"
+            style="border:0; border-radius: 16px;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Standort Steinmann Melktechnik GmbH">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Directions -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <h2>So finden Sie <span class="text-accent">uns</span></h2>
+      </div>
+      <div class="directions-grid">
+        <div class="direction-card">
+          <div class="about-icon"><i class="ph ph-car"></i></div>
+          <h3>Mit dem Auto</h3>
+          <p>Hüswil liegt an der Bernstrasse zwischen Zell und Grossdietwil. Parkplätze stehen direkt vor dem Betrieb zur Verfügung.</p>
+        </div>
+        <div class="direction-card">
+          <div class="about-icon"><i class="ph ph-map-trifold"></i></div>
+          <h3>Region</h3>
+          <p>Wir betreuen Kunden in den Kantonen Luzern, Bern, Aargau und der gesamten Zentralschweiz.</p>
+        </div>
+        <div class="direction-card">
+          <div class="about-icon"><i class="ph ph-clock"></i></div>
+          <h3>Erreichbarkeit</h3>
+          <p>Kontaktieren Sie uns telefonisch – wir sind flexibel und vereinbaren gerne einen Termin vor Ort.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo footer-logo">
+            <img src="img/logo.png" alt="Steinmann Melktechnik Logo" class="logo-img">
+          </a>
+          <p>Ihr Fachpartner für Melktechnik, Stalleinrichtungen und Hoftechnik in Hüswil, Luzern.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="ueber-uns.html">Über uns</a></li>
+            <li><a href="dienstleistungen.html">Dienstleistungen</a></li>
+            <li><a href="produkte.html">Produkte</a></li>
+            <li><a href="projekte.html">Projekte</a></li>
+            <li><a href="referenzen.html">Referenzen</a></li>
+            <li><a href="galerie.html">Galerie</a></li>
+            <li><a href="partner.html">Partner</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Leistungen</h4>
+          <ul>
+            <li><a href="dienstleistungen.html">Melktechnik</a></li>
+            <li><a href="dienstleistungen.html">Kühltechnik</a></li>
+            <li><a href="dienstleistungen.html">Stalleinrichtungen</a></li>
+            <li><a href="dienstleistungen.html">Fütterungstechnik</a></li>
+            <li><a href="dienstleistungen.html">Service & Reparatur</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Kontakt</h4>
+          <p><a href="https://www.google.com/maps/search/?api=1&query=Bernstrasse+7a,+6152+Hüswil,+Schweiz" target="_blank" rel="noopener"><i class="ph ph-map-pin"></i> Bernstrasse 7a, 6152 Hüswil</a></p>
+          <p><i class="ph ph-phone"></i> <a href="tel:+41796412453">079 641 24 53</a></p>
+          <p><i class="ph ph-envelope"></i> <a href="mailto:steinmann.urs@bluewin.ch">steinmann.urs@bluewin.ch</a></p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Steinmann Melktechnik GmbH. Alle Rechte vorbehalten.</p>
+        <div class="footer-legal">
+          <a href="impressum.html">Impressum</a>
+          <a href="datenschutz.html">Datenschutz</a>
+        </div>
+        <div class="footer-created-by">
+          <span>Diese Webseite wurde erstellt von</span>
+          <a href="https://gross-ict.ch" target="_blank" rel="noopener"><img src="img/gross-ict_logo.png" alt="Gross ICT" class="created-by-logo"></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <!-- Cookie Banner -->
+  <div class="cookie-banner" id="cookieBanner">
+    <p>Diese Website verwendet Google Fonts. Dabei werden Daten an Google übermittelt. Mehr dazu in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
+    <div class="cookie-banner-actions">
+      <button class="btn-cookie btn-cookie-accept" id="cookieAccept">Verstanden</button>
+      <button class="btn-cookie btn-cookie-decline" id="cookieDecline">Ablehnen</button>
+    </div>
+  </div>
+  <script>
+    (function(){
+      if(localStorage.getItem("cookieConsent"))return;
+      var b=document.getElementById("cookieBanner");
+      if(!b)return;
+      setTimeout(function(){b.classList.add("visible");},800);
+      document.getElementById("cookieAccept").addEventListener("click",function(){
+        localStorage.setItem("cookieConsent","accepted");b.classList.remove("visible");
+      });
+      document.getElementById("cookieDecline").addEventListener("click",function(){
+        localStorage.setItem("cookieConsent","declined");b.classList.remove("visible");
+      });
+    })();
+  </script>
+</body>
+</html>
